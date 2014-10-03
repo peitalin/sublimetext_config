@@ -1,0 +1,72 @@
+{
+	"auto_complete_commit_on_tab": true,
+	"bold_folder_labels": true,
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/User/Neue-Neon.tmTheme",
+	"create_window_at_startup": false,
+	"detect_slow_plugins": true,
+	"drag_text": false,
+	"draw_white_space": "all",
+	"find_selected_text": true,
+	"fold_buttons": true,
+	"font_face": "Source Code Pro for Powerline",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 16,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"hot_exit": true,
+	"ignored_packages":
+	[
+		"PHP",
+		"Groovy",
+		"Rails",
+		"LaTeXTools",
+		"Textile",
+		".DS_Store",
+		"ActionScript",
+		"AppleScript",
+		"Vintage",
+		"TCL",
+		"ASP",
+		"Ruby",
+		"Objective-C",
+		"Diff",
+		"C#",
+		"Matlab",
+		"YAML",
+		"Graphviz",
+		"Erlang",
+		"Batch File",
+		"OCaml",
+		"Java",
+		"RestructuredText",
+		"Go",
+		"Scala"
+	],
+	"index_files": false,
+	"margin": 8,
+	"multi_select": false,
+	"overlay_scroll_bars": "enabled",
+	"remember_open_files": true,
+	"rulers":
+	{
+		"value":
+		[
+			80
+		]
+	},
+	"scroll_past_end": true,
+	"shift_tab_unindent": false,
+	"soda_classic_tabs": false,
+	"tab_size": 4,
+	"theme": "Spacegray Eighties.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false,
+	"use_simple_full_screen": true,
+	"vintage_ctrl_keys": true,
+	"word_wrap": true
+}

@@ -1,0 +1,18 @@
+
+
+[
+    { "button": "button1", "modifiers": ["ctrl"],
+        "command": "null"},
+
+    {
+    "modifiers": ["ctrl"], "button": "button1",
+    "command": "sublime_jedi_goto",
+    "press_command": "drag_select"
+    },
+
+
+    {
+        "button": "button1", "count": 1, "modifiers": ["ctrl"],
+        "press_command": "null"
+    }
+]

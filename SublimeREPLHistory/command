@@ -1,0 +1,4058 @@
+-next
+-next(iterator, default)
+-def foo():\n    doc = "The foo property."\n    def fget(self):\n        return self._foo\n    def fset(self, value):\n        self._foo = value\n    def fdel(self):\n        del self._foo\n    return locals()\nfoo = property(**foo())
+-def OverflowErrord():\n	pass
+-w'
+-sdf
+-exceptd
+-d
+-de
+-jasdfkj
+-len(webbrowser""w_){_numpoy.random.raise}
+-\nllsll
+-def foo():\n    doc = "The foo property."\n    def fget(self):\n        return self._foo\n    def fset(self, value):\n        self._foo = value\n    def fdel(self):\n        del self._foo\n    return locals()\nfoo = property(**foo())
+-pass'
+-parse
+-panel
+-import
+-import numpy
+-numpy.test()
+-import pymc
+-import numpy
+-numpy.random.randn()
+-[1,2,2,34,]
+-x = array(reshape(arange(24), (4,6))
+-print x
+-x
+-x = arange(24)
+-numpy.arange(10)
+-import numpy as np
+-x = array(reshape(arange(24),(4,6)))
+-x = reshape(np.arange(24),(4,6)))
+-x = reshape(np.arange(24),(4,6))
+-x = np.reshape(np.arange(24),(4,6))
+-x
+-\n\nclass Time(object):\n    """Represents seconds since midnight\n    """\n    def __init__(self, hour=0, minute=0, second=0):\n        minute += hour * 60\n        self.seconds = minute * 60 + second\n        \n    def __str__(self):\n        minutes, second = divmod(self.seconds, 60)\n        hour, minute = divmod(minutes, 60)\n        return '%.2d:%.2d:%.2d' % (hour, minute, second)\n\n    def print_time(self):\n        print str(self)\n\n    def is_after(self, other):\n        """Returns True if t1 is after t2; false otherwise."""\n        return self > other\n\n    def __add__(self, other):\n        """Adds two Time objects or a Time object and a number.\n        other: Time object or number of seconds"""\n        assert self.is_valid() \n        if isinstance(other, Time):\n            return int_to_time(self.seconds + other.seconds)\n        else:\n            assert other >= 0\n            return self.increment(other)\n\n    def __radd__(self, other):\n        """Adds two Time objects or a Time object and a number."""\n        return self.__add__(other)\n\n    def increment(self, duration):\n        """adds seconds to self"""\n        duration += self.seconds\n        return int_to_time(duration)\n\n    def is_valid(self):\n        """Checks whether a Time object satisfies the invariants."""\n        return self.seconds >= 0 and self.seconds < 24*60**2\n    \n    def __cmp__(self, other):\n        t1 = self.seconds\n        t2 = other.seconds\n        return cmp(t1, t2)\n\n        \n\ndef int_to_time(seconds):\n    """Makes a new Time object.\n    seconds: int seconds since midnight.\n    """\n    return Time(0,0,seconds)\n    \n\ndef main():\n    start = Time(9, 45, 00)\n    start.print_time()\n\n    end = start.increment(1337) #create a new instance of Time: 'end'\n    #Calculate duration + 'start' -> gives a number (secs)\n    #Feed this number into int_to_time -> Time() -> instantiates a new\n    # object with 1 attribute: self.seconds\n    # Name this new object 'end' with attribute: end.seconds.\n    end.print_time()\n    #Runs end.seconds through str() -> converts to clock time. -> print\n    print 'Is end after start?',\n    print end.is_after(start)\n\n    print 'Using __str__'\n    print start, end\n\n    start = Time(9, 45)\n    duration = Time(1, 35)\n    print start + duration\n    print start + 1337\n    print 1337 + start\n\n    print 'Example of polymorphism'\n    t1 = Time(7, 43)\n    t2 = Time(7, 41)\n    t3 = Time(7, 37)\n    total = sum([t1, t2, t3])\n    print total\n    \n    print '\\n%s is larger than %s; 1 if true.' % (t1, t3)\n    print cmp(t1, t3)\n\n\nif __name__ == '__main__':\n    main()
+-3
+-asdf
+-3
+-1
+-import numpy as np\nfrom numpy import linalg\nfrom scipy import *\n\n\n\ny = matrix([[2,.5],[.5,4]])\nx = linalg.cholesky(y)\n# Cholesky decomposition\nprint x*x.T, '\\n'\n\n#Eigenvalues, Eigenvectors\nval, vec = linalg.eig(y)\n\n# Eigendecomposition\nprint vec.dot(diag(val)).dot(vec.T)\nprint '\\n', vec*diag(val)*vec.T,  '\\n'\n\n# properties of eigenvalues, sum:trace, product:determinant\nprint sum(val), trace(y)\nprint prod(val), linalg.det(y), '\\n'\n# inverse y/eigendecomp\nprint linalg.inv(y), '\\n'\nprint vec*linalg.inv(diag(val))*vec.T, '\\n'\n# just take inverse of diag(eigvalues)\n\n\n# y = x*/Beta + epsilo, least squares solution\nx_ = randn(100,2); e = randn(100,1); Beta = matrix([[1],[.5]])\ny_ = x_ * Beta + e\nsolution = linalg.lstsq(x_, y_)\n\n# Matrix rank\ny2 = matrix([[5,-1.5, -3.5],[-1.5,2,-0.5],[-3.5,-0.5,4]])\nprint linalg.matrix_rank(y2), '\\n'\ny2val, y2vec = linalg.eig(y2)\n\n\nx2 = randn(100,2)\ncov_x2 = np.cov(x2.T)\nprint 'The covariance matrix of x2:\\n' , cov_x2, '\\n'\n\n\nprint 'numpy.kron(I, cov_x2):\\n', np.kron(eye(2), cov_x2)
+-asdasdas
+-ad
+-da
+-as
+-asdasdas
+-asdasdasdasd
+-asdf
+-6
+-import numpy as np\nfrom numpy import linalg\nfrom scipy import *\n\n\nfor i in xrange(50):\n	y = matrix([[2,.5],[.5,4]])\n	x = linalg.cholesky(y)\n	# Cholesky decomposition\n	print x*x.T, '\\n'\n\n	#Eigenvalues, Eigenvectors\n	val, vec = linalg.eig(y)\n\n	# Eigendecomposition\n	print vec.dot(diag(val)).dot(vec.T)\n	print '\\n', vec*diag(val)*vec.T,  '\\n'\n\n	# properties of eigenvalues, sum:trace, product:determinant\n	print sum(val), trace(y)\n	print prod(val), linalg.det(y), '\\n'\n	# inverse y/eigendecomp\n	print linalg.inv(y), '\\n'\n	print vec*linalg.inv(diag(val))*vec.T, '\\n'\n	# just take inverse of diag(eigvalues)\n\n\n	# y = x*/Beta + epsilo, least squares solution\n	x_ = randn(100,2); e = randn(100,1); Beta = matrix([[1],[.5]])\n	y_ = x_ * Beta + e\n	solution = linalg.lstsq(x_, y_)\n\n	# Matrix rank\n	y2 = matrix([[5,-1.5, -3.5],[-1.5,2,-0.5],[-3.5,-0.5,4]])\n	print linalg.matrix_rank(y2), '\\n'\n	y2val, y2vec = linalg.eig(y2)\n\n\n	x2 = randn(100,2)\n	cov_x2 = np.cov(x2.T)\n	print 'The covariance matrix of x2:\\n' , cov_x2, '\\n'\n\n\n	print 'numpy.kron(I, cov_x2):\\n', np.kron(eye(2), cov_x2)
+-import numpy as np\nfrom numpy import linalg\nfrom scipy import *\n\n\nfor i in xrange(500):\n	y = matrix([[2,.5],[.5,4]])\n	x = linalg.cholesky(y)\n	# Cholesky decomposition\n	print x*x.T, '\\n'\n\n	#Eigenvalues, Eigenvectors\n	val, vec = linalg.eig(y)\n\n	# Eigendecomposition\n	print vec.dot(diag(val)).dot(vec.T)\n	print '\\n', vec*diag(val)*vec.T,  '\\n'\n\n	# properties of eigenvalues, sum:trace, product:determinant\n	print sum(val), trace(y)\n	print prod(val), linalg.det(y), '\\n'\n	# inverse y/eigendecomp\n	print linalg.inv(y), '\\n'\n	print vec*linalg.inv(diag(val))*vec.T, '\\n'\n	# just take inverse of diag(eigvalues)
+-import pylab
+-pylab.text()
+-pylab.test()
+-import pymc
+-print "Iasdfasdf"
+-2
+-pi
+-import numpy
+-pi
+-numpy.pi
+-%timeit for x in range(1000)
+-%timeit for x in range(1000): 1+=1
+-breakn
+-n
+-dir(diff)
+-help(diff)
+-help(iinfo)
+-np.finfo(np.float64)
+-dir(inv)
+-dir(numpy)
+-help(numpy)
+-help(inv)
+-dir(size)
+-help(size)
+-help(np.linalg))
+-help(np.linalg)
+-help(figure)
+-help(plt)
+-np.repeat(0.333)
+-asdf
+-, 5)
+-np.repeat(2, 4)
+-import numpy as np
+-np.repeat( 0.22, 20)
+-print sigma2
+-help(copy)
+-raw_input('find prices')
+-asdfasdf
+-data = raw_input('where the prices at?: ')
+-FTSE_1984_2012.csv
+-print data
+-print repr(data)
+-x = zeros(5,4)
+-x = zeros((4,3))
+-x
+-x[::-1]
+-x[:-1:-1]
+-x[:-1:]
+-x[-1::]
+-x[1::]
+-x[1:,:]
+-x[1:,1:]
+-x = reshape(arange(20),(5,4))
+-x
+-x[::1]
+-x[::-1]
+-x[::-2]
+-x = reshape(arange(20),(5,4))
+-x = reshape(arange(20),(5,4))
+-x
+-parameters = []
+-x, y, z = parameters[:]
+-x, y, z = list(3)
+-print list(3)
+-list(3)
+-z= list(3)
+-p = [1,2,3,4,5]
+-x,y,z,a,b = p[:]
+-x
+-z
+-b
+-mean(p)
+-p = [1,2,3,4,5.0]
+-mean(p)
+-sum(1,2,3,4,5)
+-sum([1,2,3,4,5])
+-var(p)
+-p = [1,2,7,6,5,34,6,5,4,3,2.2,1,.3]
+-var(p)
+-mean(p)
+-median(p)
+-np.finfo
+-np.finfo(float32
+-np.finfo(float32)
+-np.finfo(float64)
+-np.finfo(np.float64)
+-epsilon = np.finfo(np.float(64))
+-epsilon
+-epsilon = np.finfo(np.float64)
+-epsilon
+-ep = np.finfo(np.float64)
+-ep
+-print ep
+-finfo = np.finfo(np.float64)
+-print finfo
+-finfo = np.finfo(np.float32)
+-print finfo
+-finfo.eps
+-finfo = np.finfo(np.float64)
+-finfo.eps
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-print self.returns
+-self.returns
+-self.returns
+-FTSE_1984_2012.csv
+-proc.returns
+-proc.sigma2
+-proc.parameters
+-proc.parameter
+-proc.mu
+-proc.omega
+-proc.alpha
+-proc.gamma
+-proc.beta
+-proc.beta
+-FTSE_1984_2012.csv
+-proc.parameters
+-proc.parameters
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-proc.sigma2
+-FTSE.sigma2
+-x = [:15]
+-x = [1:15]
+-x = list(10)
+-x = list(arange(100))
+-x
+-x = zeros(100)
+-x
+-z  = none(100)
+-z = [none]*100
+-z = [None]*1000
+-z
+-z = [None]*100
+-z
+-type(z)
+-memoryview(z)
+-memoryview(z)
+-FTSE_1984_2012.csv
+-print FTSE.GJR_GARCH()
+-print FTSE.GJR_GARCH()
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-sigma2 = []
+-for t in xrange(1, T):\n			sigma2[t] = omega + alpha*eps[t-1]**2 + gamma*(eps[t-1]<0)**2 + beta*sigma2[t-1]
+-for t in xrange(1, 15):\n			sigma2[t] = 1+1
+-for t in xrange(1, 10):\n			sigma2[t] = 1+t
+-for i in xrange(10):
+-print i + 1
+-for i in xrange(10):\n		print i + 1
+-for i in xrange(1,10):\n		print i + 1
+-for i in xrange(1,10):\n		sigma2[t] = 1 + i
+-sigma2 = array(10)
+-sigma2
+-for i in xrange(1,10):\n		sigma2[t] = 1 + i
+-sigma2 = list(sigma2)
+-sigma2 = [None]*10
+-sigma2
+-for i in xrange(1,10):\n		sigma2[t] = 1 + i
+-sigma2
+-sigma2 = zeros(10)
+-sigma2
+-for i in xrange(1,10):\n		sigma2[t] = 1 + i
+-sigma2
+-for i in xrange(1,10):\n		sigma2[i] = 1 + i
+-sigma2
+-for i in xrange(1,10):\n		sigma2[i] = 1
+-sigma2
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-size(self.returns)
+-size(FTSE.returns)
+-size(FTSE.sigma2)
+-FTSE_1984_2012.csv
+-size(FTSE.returns)
+-size(FTSE.sigma2)
+-size(FTSE.sigma2)
+-FTSE_1984_2012.csv
+-FTSE.sigma2
+-size(FTSE.sigma2)
+-FTSE_1984_2012.csv
+-size(eps)
+-size(self.returns)
+-size(FTSE.returns)
+-FTSE.returns - mu
+-type(FTSE.sigma2)
+-help(ndarray)
+-FTSE.sigma2
+-FTSE.sigma2.append(1)
+-append(FTSE.sigma2, 1, 0)
+-sigma2
+-FTSE.sigma2
+-FTSE.sigma2[0]
+-size(prices)
+-FTSE.sigma2
+-FTSE.sigma2
+-FTSE_1984_2012.csv
+-type(FTSE.returns)
+-size(FTSE.returns)
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE.beta
+-FTSE.gamma
+-FTSE.parameters
+-FTSE.sigma2
+-FTSE.sigma2
+-FTSE_1984_2012.csv
+-FTSE.parameters
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-x = para[0]
+-gjr_garch_likelihood([.1,.1,.1,.1,.1], sigma2, argparse)
+-)
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE.parameters
+-FTSE.parameters[0]
+-help(map)
+-FTSE.parameters[0]
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-gjr_garch_likelihood(startingVals, FTSEreturn, sigma2, out=True)
+-gjr_garch_likelihood(startingVals, FTSEreturn, sigma2)
+-gjr_garch_likelihood(Estimates, FTSEreturn, sigma2)
+-gjr_garch_likelihood(Estimates, FTSEreturn, sigma2)
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-getattr(GARCH_Process)
+-getattr(GARCH_Process, 1)
+-getattr("GARCH_Process", 1)
+-getattr("GARCH_Process",  "__init__")
+-getattr("GARCH_Process",  "__init__")
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-print FTSE
+-print FTSE.returns
+-print FTSE.sigma2
+-print FTSE.sigma2
+-print FTSE.sigma2
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-global x = 1
+-help(global)
+-global
+-dir(global)
+-help(global)
+-help(global)
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_20
+-abs
+-def function():\n	pass
+-f3
+-f3
+-d1
+-21
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-FTSE_1984_2012.csv
+-import os
+-os.getcwd()
+-os.dir()
+-help(os)
+-os.__doc__
+-or.curdir
+-os.curdir
+-os.path
+-os.pardir
+-os.help(object)
+-help(os)
+-help(os)
+-help(csv2rec)
+-import os
+-os.chdir
+-os.chdir()
+-os.chdir(I:\\python)
+-os.chdir(I:\\Python)
+-os.chdir('I:\\Python')
+-os.chdir(r'I:\\Python')
+-os.listdir
+-os.listdir()
+-os.listdir(r'I:\\Python')
+-'FTSE_1984_2012.csv'
+-'FTSE_1984_2012.csv'
+-os.listdir()
+-os.cwd)
+-os.cwd()
+-os.chdir()
+-'FTSE_1984_2012.csv'
+- set
+-os.getcwd()
+-123
+-'FTSE_1984_2012.csv'
+-3
+-2
+-0
+-12
+-FTSE.sigma2
+-sigma2final
+-2
+-len(FTSE.estimates)
+-step
+-len(step)
+-set
+-set
+-123
+-kwargs
+-FTSE.returns
+-FTSE.parameters
+-kwargs
+-kwargs[1]
+-kwargs[2]
+-kwargs[parameters]
+-kwargs['parameters']
+-kwargs['parameters','sigma2']
+-kwargs['parameters':'sigma2']
+-kwargs['parameters', 'sigma2']
+-kwargs['parameters' 'sigma2']
+-kwargs['parameters'; 'sigma2']
+-kwargs['parameters'][0]
+-kwargs['parameters'][0:21]
+-kwargs['parameters'][0:3]
+-kwargs['parameters']
+-dict.__doc__
+-dir(dict)
+-dict.keys
+-kwargs.keys
+-kwargs.viewitems
+-kwargs.viewkeys
+-kwargs.keys()
+-kwargs.keys(1,2)
+-kwargs.keys()
+-kwargs.viewkeys()
+-kwargs.values()
+-kwargs.items()
+-scores
+-scores[:,1]
+-logliksplus
+-FTSE.gjr_garch_likelihood(FTSE.estimates, *args, out=True)
+-y = FTSE.gjr_garch_likelihood(FTSE.estimates, *args)
+-y = FTSE.gjr_garch_likelihood(FTSE.estimates, *args, True)
+-y = FTSE.gjr_garch_likelihood(FTSE.estimates, *args, out=True)
+-y
+-y[1]
+-len(y[1])
+-scores
+-2
+-8
+-scores
+-size(scores)
+-shape(scores)
+-7041*5
+-stringprep
+-step
+-step
+-step
+-print B
+-shape(C), shape(B)
+-set
+-B
+-C == B
+-C == B
+-y = [1,1,1,1,1]
+-x = [2,3,4,5,6]
+-np.outer(y,x)
+-y = [1,2,1,2,1]
+-np.outer(y,x)
+-scores
+-2
+-logliksplus
+-scores
+-shape(scores)
+-12
+-cscores
+-shape(cscores)
+-shape(cscores)
+-size(C)
+-shape(C)
+-Bastion
+-B
+-shape(B)
+-3
+-clogliksplus
+-clogliksplus.mean()
+-3
+-B
+-L = [2,3,8,16,32]
+-G = L.tile(5)
+-L = array(L)
+-G = L.tile(5, 0)
+-G = tile(L, 5)
+-G
+-shape(G)
+-G = vstack(L, 5)
+-G = vstack((L, L))
+-G
+-G = vstack((L, L, L, L, L))
+-G
+-g = mean(L)
+-g
+-g = vstack(g,g,g,g,g)
+-g = vstack((g,g,g,g,g))
+-g
+-1 = dot(G, G.T)
+-dot(G, G.T)
+-q = dot(G, G.T)
+-a = np.outer(g, g.T)
+-shape(g)
+-shape(g.T)
+-q
+-a
+-q = q/5
+-q
+-B
+-C
+-l = [3,9,12,15,18]
+-lt = mean(l)
+-lt
+-dot(l, l.T)
+-l = mat(l)
+-l
+-l*l.T
+-l*l.T/5
+-lt*lt
+-FTSE.scores
+-B
+-FTSE.B
+-FTSE.B
+-FTSE.B
+-\n>>> FTSE.gjr_likelihood(FTSE.estimates, *args, out=True)
+-\n>>> FTSE.gjr_likelihood(FTSE.estimates, FTSE.returns, FTSE.sigma2, out=True)
+-\n>>> FTSE.gjr_likelihood(FTSE.estimates, *args, out=True)
+-\n>>> FTSE.gjr_likelihood()
+-\n>>> FTSE.gjr_likelihood
+-kwargs
+-kwargs['parameters'][:]
+-kwargs['parameters'][:]
+-kwargs['parameters'][:]
+-dir(add_subplot)
+-help(add_subplot)
+-dir(fig.add_subplot)
+-dir(fig)
+-import numpy
+-help(csv2rec)
+-import numpy
+-import scipy
+-import matplotlib
+-help(csv2rec)
+-csv2rec
+-dir(csv2rec)
+-csv2rec.__doc__
+-import os
+-os.getcwd()
+-print(data)
+-print(data1)
+-data
+-print(data)
+-print(data)
+-print(data1)
+-print(data1)
+-print(data)
+-print(data)
+-x = mat(data1)
+-x
+-type(x)
+-type(data)
+-size(x)
+-shape(x)
+-x
+-shape(data1)
+-shape(data)
+-shape(data), shape(data1)
+-help(csv2rec)
+-shape(data1)
+-shape(data)
+-type(data1)
+-mat(data1)
+-help(csv2rec)
+-shape(data)
+-help(csv2rec)
+-shape(data1)
+-shape(data)
+-data1
+-shape(data1)
+-data
+-len(data1[0])
+-len(data1)
+-shape(data1)
+-data1
+-data1[0]
+-shape(data1)
+-type(data1)
+-help(csv2rec)
+-a
+-shape(a)
+-shape(data)
+-shape(data)
+-shape(data1)
+-shape(a)
+-a
+-data1 = np.reshape(-1)
+-data1.reshape(-1)
+-data1
+-shape(data1)
+-y = data1.reshape(-1)
+-y
+-shape(y)
+-help(csv2rec)
+-data1.view()
+-help(array)
+-array.__doc__
+-dir(array)
+-data1
+-shape(data1)
+-data1[0]
+-data1.reshape(-1)
+-data1.reshape(-1)
+-data1.reshape((len(data1),-1))
+-y =data1.reshape((len(data1),-1))
+-shape(y)
+-y =data1.reshape((len(data1),-30))
+-shape(y)
+-mat(data1)
+-y = mat(data1)
+-shape(y)
+-y
+-y = mat(range(*data1))
+-range(data1)
+-range(*data1)
+-list(data1)
+-len(data1)
+-data11
+-shape(data11)
+-data11
+-shape(data11)
+-shape(data1)
+-shape(data1[:])
+-data1[0]
+-list(data1[0])
+-data1[0]
+-data1[1]
+-len(data1)
+-dataB
+-shape(dataB)
+-data1
+-shape(data1)
+-shape(data)
+-data==data1
+-data1[4][:]
+-data1[:][0]
+-data1[0][:]
+-data1[0,:]
+-shape(data1)
+-help(csv2rec)
+-data1['19950101']
+-data1[0]
+-data1['196605']
+-data1['192607']
+-y = [1,1,1,2,2,2,1,1,1,1]
+-np.array(var(y))
+-np.repeat(var(y))
+-np.repeat(var(y), 100)
+-np.repeat(var(y), 100)
+-2
+-FTSE_1984_2012.csv
+-os.getcwd()
+-def function():\n	pass
+-os.getcwd()
+-2
+-os.getcwd()
+-os.listdir
+-os.listdir()
+-os.listdir('I:\\Python')
+-2
+-filename
+-12323
+-1
+-os.getcwd()
+-filename
+-repr(filename)
+-y = raw_input()
+-yes
+-y
+-filename
+-yes
+-filename
+-2
+-os.getcwd()
+-os.getcwd()
+-csv2rec('I:\\\\Python\\\\FTSE_1984_2012.csv')
+-filename
+-123\\
+-filename
+-123
+-filename
+-data
+-data
+-filename
+-sorted
+-FTSE.filename
+-123
+-FTSE.filename
+-123
+-2
+-123
+-1
+-list
+-T
+-FTSE.returns
+-123
+-FTSE.returns
+-213
+-213
+-2
+-123
+-5
+-123
+-bounds
+-213
+-2
+-2
+-2
+-2
+-2
+-finfo.eps
+-np.findo(np.float64).eps
+-np.finfo(np.float64).eps
+-np.finfo(np.float64)
+-print np.finfo(np.float64)
+-set
+-k
+-2
+-kwargs
+-kwargs['parameters']
+-kwargs
+-args
+-import numpy as numpy
+-numpy.float64
+-np.finfo(np.float64)
+-import numpy as np
+-np.finfo(np.float64)
+-print np.finfo(np.float64)
+-FTSE.returns
+-FTSE.returns.size()
+-FTSE.returns.size
+-T
+-args
+-mu
+-FTSE.gjr_run(**kwargs)
+-FTSE.gjr_run(**kwargs)
+-FTSE.gjr_run(**kwargs)
+-FTSE.gjr_run(**kwargs)
+-self.sigma2
+-FTSE.sigma2
+-FTSE.sigma2.size
+-FTSE.returns.size
+-T.size
+-T
+-mu, omega, alpha, gamma, beta = parameters[:]
+-mu, omega, alpha, gamma, beta = kwargs['parameters'][:]
+-mu
+-mu
+-args
+-fmin_slsqp(gjr_garch_likelihood, startingVals, f_ieqcons=gjr_constraint, bounds=bounds, args=args)
+-fmin_slsqp(FTSE.gjr_garch_likelihood, startingVals, f_ieqcons=FTSE.gjr_constraint, bounds=bounds, args=args)
+-fmin_slsqp(FTSE.gjr_garch_likelihood, kwargs['parameters'], f_ieqcons=FTSE.gjr_constraint, bounds=bounds, args=args)
+-kwargs
+-startinVals
+-kwargs
+-args
+-args
+-args
+-data.mean
+-data.mean()
+-print out
+-out
+-shape(out)
+-X
+-shape(X)
+-shape(excessReturns)
+-out
+-alpha
+-beta
+-out[0][:]
+-size(out)
+-size(out[0])
+-shape(out[0])
+-help(lstsq)
+-riskfree
+-factors
+-shape(factors)
+-shape(riskfree)
+-X
+-shape(X)
+-shape(excessReturns)
+-out[0]
+-shape(out[0])
+-beta
+-beta[0]
+-shape(beta[0])
+-shape(factors)
+-shape(out[0])
+-avgExcesssReturns
+-avgExcessReturns
+-shape(avgExcessReturns)
+-out = lstsq(beta.T, avgExcessReturns.T)
+-out
+-lam = out[0]
+-lam
+-K
+-T
+-N
+-moments
+-import string
+-trim('asdf')
+-dir(trime)
+-dir(trim)
+-help(trim)
+-string.trim
+-dir(string)
+-y = "FTSE1984.csv"
+-y
+-y.strip('.csv')
+-y.strip('.csv','_')
+-y.strip(('.csv','_'))
+-y.strip('.csv' and '_')
+-y.strip('.csv';'_')
+-y.strip('.csv','_')
+-y.strip('.csv, _')
+-y = FTSE___1984.csv
+-y = "FTSE___1984.csv"
+-y
+-y.strip('.csv, _')
+-y = "FTSE_1984.csv"
+-y.strip('.csv, _')
+-y.replace('.csv', "")
+-y.replace('.csv', "").replace('_', "")
+-plt.show()
+-obj_name
+-np.random
+-asdfasdf
+-asdfasdfasd
+-import numpy as numpy
+-import numpy as np
+-np
+-np.random.random
+-np.random.rand
+-np.random.rand()
+-np.random.randi()
+-np.random.randint()
+-np.random.randint(1)
+-np.random.randint(1,10)
+-np.random.rand(0.0,0.05)
+-np.random.rand(0.0,0.05,0)
+-print np.random.rand(0.0,0.05,0)
+-print np.random.rand(0.0,0.05)
+-help(np.random.rand)
+-print np.random.rand(0.0,0.05)
+-print np.random.rand((0.0,0.05))
+-print np.random.rand((0,1]))
+-print np.random.rand((0,1])
+-help(np.random.randint)
+-help(np.random.random)
+-help(np.random
+-)
+-import numpy as np
+-dir(np.random)
+-dir(np.random.randn)
+-hepl(np.random.randn)
+-help(np.random.randn)
+-np.random.randn()
+-help(np.random.randn)
+-0.01<0
+-0.01<0
+-0.1<0*2
+-(0.1<0)*2
+-(0.1>0)*2
+-from __future__ import print_function\nimport multiprocessing as mp\nimport numpy as np\nimport matplotlib.pyplot as plt
+-def compute_eig(arg):\n	n = arg[0]\n	state = arg[1]\n	print(arg[2])\n	np.random.set_state(state)\n	x = np.random.standard_normal((n))\n	m = int(np.round(np.sqt(n)))\n	x.shape = m, m\n	w = np.lingalg.eigvalsh(np.dot(x.T, x)/m)\n	return w
+-	print('starting')\n	states = []\n	np.random.seed()\n\n	for i in xrange(1000):\n		n = 1000000\n		states.append((n, np.random.get_state(), i))\n		temp = np.random.standard_normal((n))
+-import os
+-os.getcwd()
+-2
+-garch_type
+-help(map)
+-help map
+-help(map)
+-FTSE.Type
+-help(fmin_bfgs)
+-help(zip)
+-4109
+-os.getcw()
+-os.getcwd()
+-os.path.abspath
+-os.path.abspath()
+-os.path.abspath(__name__)
+-print e1
+-g
+-type(g)
+-type(Graph)
+-g[1][2]
+-g[1]
+-g
+-g[v]
+-g[v][w]
+-g
+-g.get_edge(w,u)
+-g.get_edge(v,u)
+-g.get_edge(v,v)
+-g.get_edge(w,w)
+-g.get_edge(w,w)
+-g.get_edge(w,v)
+-help(__dict__)
+-dir(__dict__)
+-help(Graph)
+-g.key
+-g.keys
+-g.keys()
+-g[1][1]
+-g[1]
+-g
+-g[v]
+-g[v][u]
+-g[v]
+-e1
+-e2
+-e3
+-g[:]
+-g[]
+-g[e1]
+-g
+-g.remove_edge(v)
+-g.remove_edge()
+-dir(popitem)
+-dir(pop)
+-dir(graph.pop)
+-dir(Graph.pop)
+-dir(Graph)
+-g.pop
+-g.pop(e1)
+-g.pop(v)
+-g
+-g.pop(v)
+-g.pop(w)
+-g
+-g.v
+-g
+-g[v]
+-g[v][:]
+-g[v][]
+-g[v][e1,e2]
+-g[v][e1]
+-g[v][e3]
+-g[v][1]
+-g[v]
+-g[v][w]
+-g[v][u][e1]
+-g[v][u]
+-g[v].def foo():\n    doc = "The foo property."\n    def fget(self):\n        return self._foo\n    def fset(self, value):\n        self._foo = value\n    def fdel(self):\n        del self._foo\n    return locals()\nfoo = property(**foo())
+-g[v].pop
+-g.pop[v]
+-g.pop[w]
+-g
+-g.pop()
+-g.pop(w)
+-g
+-g.pop(v)
+-g
+-g[v].pop()
+-g[v].pop(v)
+-g[v].pop(g[v][v])
+-g[v].pop(g[v][w])
+-g[v].pop(g[w])
+-g
+-g[v]
+-g[v].pop(g[v][w]]
+-g[v].pop(g[v][w])
+-g[v].popitem(g[v][w])
+-g[v].popitem()
+-g
+-g[v].popitem()
+-g
+-len(g[v])
+-len(g[w])
+-len(g[u])
+-g.remove_edges(w)
+-g.remove_edges(w)
+-g.[w]
+-g[s]
+-g[u]
+-g.remove_edges(w)
+-g.remove_edges(w)
+-g.remove_edges(w)
+-g
+-size(g)
+-g.size
+-len(g)
+-len(g[v])
+-len(g[v][])
+-g
+-g.keys
+-g.keys()
+-g.keys()
+-g
+-g
+-Edge('v','w')
+-Edge(v, w)
+-v
+-V
+-V[1]
+-Edge(Vertex[0], Vertex[2])
+-Edge(Vertex[0], Vertex[1])
+-Edge(V[0], V[1])
+-V
+-V[-1]
+-V[::-1]
+-len(V)
+-j = len(V)
+-j
+-j -= 1
+-j
+-xrange(len(V))
+-xrange(4)
+-print xrange(4)
+-for i in xrange(4) print j
+-for i in xrange(4) print 1
+-for i in xrange(4): print 1
+-[print 1 for i in xrange(4)]
+-for i in xrange(4): print i
+-xrange(1,len(V))
+-for i in xrange(1,4): print i
+-g
+-g
+-g[v]
+-g['v']
+-g[V]
+-g[V[0]]
+-V[0]
+-g[V[0]][]
+-g[V[0]]
+-g
+-g[V[0]]
+-E
+-len(g)
+-len(g[[V]])
+-len(g[V[0]]])
+-len(g[V[0]])
+-len(g[V[1]])
+-len(g[V[2]])
+-len(g[V[3]])
+-len(g)
+-E
+-g
+-len(E)
+-len(g)
+-len(V[0]])
+-len(V[0])
+-len(g[V[2]])
+-V
+-g
+-g[V[0]]
+-g[V[0][V[1]]]
+-g[V[0][1]]
+-g[V[0][3]]
+-g[V[0][1]]
+-V[0]
+-V[2]
+-g[V[V[0]]]
+-g.shape()
+-g.shape
+-g
+-g[V[0]]
+-repr('v')
+-'v'
+-str('v')
+-repr(g[V[0]])
+-str(g[V[0]])
+-V
+-g
+-E
+-V
+-g[v]
+-g['v']
+-'v'
+-repr(nodes[1])
+-str(nodes[1])
+-nodes
+-float(nodes)
+-float(nodes[1])
+-repr(nodes)
+-nodes
+-str(nodes)
+-v
+-v = empty
+-v = v
+-v = 'v'
+-v
+-str(v)
+-v
+-gg
+-g
+-g[v]
+-v
+-V
+-v
+-V
+-V
+-g
+-g[v]
+-g[z]
+-z[1]
+-z
+-V
+-V
+-v
+-g
+-g[v]
+-g[v][u]
+-g[v][v]
+-g[v][z]
+-len(g)
+-len(g[][])
+-len(g[V]
+-)
+-g[V]
+-g
+-V
+-g[v][q]
+-nodes
+-V
+-g
+-g.keys
+-print g.keys
+-print g.keys()
+-g[v].keys()
+-g[v][u].keys()
+-g[v][u]
+-g.keys()]
+-g.keys()
+-g.edges
+-g.edges
+-g.edges
+-g[v][u]
+-g[v][u]
+-g.edges
+-g[v]
+-g.vertices
+-g.edges
+-g.edges
+-g.edges
+-g.edges()
+-g.edges()
+-g.edges()
+-g.edges()
+-g.edges()
+-g.edges()
+-g.edges()
+-g.iteriems()
+-g.items()
+-g.items()
+-g.edges()
+-g.keys()
+-g[v]
+-g[v].keys()
+-g[v][u].keys()
+-g[v][u].items()
+-g[v].keys()
+-g.keys()
+-g[v].keys()
+-g[v][w]
+-g.edges()
+-import set
+-v
+-g[v]
+-g[v].keys()
+-g.edges()
+-g.edges()
+-g.edges()
+-g.edges()
+-g.edges()
+-g.edges()
+-os.getcwd()
+-os.path
+-os.getcwd()
+-os.path
+-dir(os.path)
+-os.listdir
+-os.listdir()
+-os.listdir(last.py)
+-os.path.pardir
+-os.path.realpath()
+-os.path.realpath(__file__)
+-os.path.realpath('__file__')
+-os.path.dirname(sys.argv[0])
+-import sys
+-os.path.dirname(sys.argv[0])
+-sys.argv[0]
+-os.path.abspath(__file__)
+-sys.argv[0]
+-dir(os)
+-os.getcwdu
+-os.getcwdu()
+-dir(os.path)
+-os.pardir()
+-os.pardir
+-os.curdir()
+-os.curdir
+-pwd
+-os.path.dirname(sys.argv[0])
+-os.path.abspath
+-abst
+-os.path.abspath(abst)
+-Python 2.7.3 (default, Apr 10 2012, 23:31:26) [MSC v.1500 32 bit (Intel)] on win32\r\nType "help", "copyright", "credits" or "license" for more information.\r\n>>> import multiprocessing\nimport time\nimport os\nimport numpy as np\nimport string\nimport random\nimport math\nfrom itertools import chain\nimport sys\n\nabst = os.path.dirname(sys.argv[0])\nprint abst\n\npwd = os.path.abspath(os.path.dirname(sys.argv[0]))\nprint pwd, pwd\nsys.path.append(pwd)\n\n\ntry:\n    from Gui import Gui, GuiCanvas\nexcept ImportError:\n    from swampy.Gui import Gui, GuiCanvas\n\n# from Graph import Vertex\n# from Graph import Edge\n# from Graph import Graph\n\n# class GraphCanvas(GuiCanvas):\n#     ''' a GraphCanvas is a canvas that knows how to draw Vertices and Edges'''\n\n#     def draw_vertex(self, v, r=0.45):\n#         '''draw a Vertex as a yellow circle with radius (r) and text (v.label)'''\n#         tag = 'v%d' % id(self)\n\n#         try:\n#             color = v.color\n#         except:\n#             color = 'yellow'\n\n#         self.circle(v.pos, r, color, tags=tag)\n#         self.text(v.pos, v.label, 'black', tags=tag)\n#         return tag\n\n#     def draw_edge(self, e):\n#         ''' draw an Edge as a line between the positions of the Vertices it connects '''\n#         v, w = e\n#         tag = self.line([v.pos, w.pos])\n#         return tag\n\n# class GraphWorld(Gui):\n#     ''' GraphWorld is a Gui that has a Graph Canvas and control buttons.'''\n#     def __init__(self):\n#         Gui.__init__(self)\n#         self.title('GraphWorld')\n#         self.setup()\n\n#     def setup(self):\n#         '''Create the widgets.'''\n#         self.ca_width = 400\n#         self.ca_height = 400\n#         xscale = self.ca_width / 20\n#         yscale = self.ca_height / 20\n\n#         #\n#         self.col()\n#         self.canvas = self.widgets(GraphCanvas, scale=[xscale, yscale], width=self.ca_width, height=self.ca_height, bg='white')\n\n#         # buttons\n#         self.row()\n#         self.bu(text='Clear', command=self.clear)\n#         self.bu(text='Quit', command=self.quit)\n#         self.endrow()\n\n#     def show_graph(self, g, layout):\n#         ''' Draws the Vertices and Edges of Graph (g) using the positions in Layout (layout).\n#         '''\n\n#         # copy the positions from the layout ino the Vertex objects\n#         for v in g.vertices():\n#             v.pos = layout.pos(v)\n\n#         # draw the edges and strore the tags in self.etags, which maps from Edges to their tags\n#         c = self.canvas\n#         self.etags = {}\n#         for v in g:\n#             self.etags[v] = [c.draw_edge(e) for e in g.out_edges(v)]\n\n#         # draw the vertices and store their tags in a list\n#         self.vtags = [c.draw_vertex(v) for v in g]\n\n#     def clear(self):\n#         ''' Delete all canvas items.'''\n#         tags = chain(self.vtags, *self.etags.itervalues())\n#         for tag in tags:\n#             self.canvas.delete(tag)\n\n\n# class Layout(dict):\n#     ''' A Layout is a mapping from vetices to position in 2-D space'''\n\n#     def __init__(self, g):\n#         for v in g.vertices():\n#             self[v] = (0,0)\n\n#     def pos(self, v):\n#         ''' Returns the position of this Vertex as a tuple.'''\n#         return self[v]\n\n#     def distance_between(self, v1, v2):\n#         ''' Computes the Euclidean distance between two vertices.'''\n#         x1, y2 = self.pos(v1)\n#         x2, y2 = self.pos(v2)\n#         dx = x1 - x2\n#         dy = y1 - y2\n#         return math.sqrt(dx**2 + dy**2)\n\n#     def sort_by_distance(self, v, others):\n#         ''' Returns a lsit of the vertices in other sorted in increasing order by thier distance from v.'''\n#         t = [(self.distance_between(v,w),w) for w in others]\n#         t.sort()\n#         return [w for (d,w) in t]\n\n# class CircleLayout(Layout):\n#     '''Creats a layout for a graph with the vertice equally spaced around the perimeter of a circle.'''\n\n#     def __init__(self, g, radious=9):\n#         ''' Creates a layout for Graph (g)'''\n#         vs = g.vertices()\n#         theta = math.pi * 2 / len(vs)\n#         for i, v in enumerate(vs):\n#             x = radius* math.cos(i*theta)\n#             y = radious * math.sin(i * theta)\n#             self[v] = (x,y)\n\n\n# class RandomLayout(Layout):\n#     ''' Create a layout with each Vertex at a random position in [[-max, -max], [max, max]].'''\n\n#     def __init__(self, g, max=10):\n#         ''' Creats a layout for Graph (g)'''\n#         self.max = max\n#         for v in g.vertices():\n#             self[v] = self.random_pos()\n\n#     def random_pos(self):\n#         ''' choose a random position and return it as a tuple'''\n#         x = random.uniform(-self.max, self.max)\n#         y = random.uniform(-self.max, self.max)\n#         return x,y\n\n#     def spread_vertex(self, v, others, min_dist=1.0):\n#         ''' Keep choosing random positions for v  until it is at least min_dist units from the vertices in others.\n\n#         Each time it fails, it relaces min_dist by 10%.\n#         '''\n#         while True:\n#             t = [(self.distance_between(v, w), w) for w in others]\n#             d,w = min(t)\n#             if d > min_dict:\n#                 break\n#             min_dist *= 0.9\n#             self[v] = self.random_pos()\n\n#     def spread_vertices(self):\n#         ''' Moves the vertices around until no two are closer together than a minimum distnace.'''\n#         vs = self.keys()\n#         others = vs[:]\n#         for v in vs:\n#             others.remove(v)\n#             self.spread_vertex(v, others)\n#             others.append(v)\n\n# def main(script, n='10', *args):\n\n#     # create n Vertices\n#     n = int(n)\n#     labels = string.ascii_lowercase + string.ascii_uppercase\n#     vs = [Vertex(c) for c in labels[:n]]\n\n#     # create a graph and a layout\n#     g = Graph(vs)\n#     g.add_all_edges()\n#     layout = CircleLayout(g)\n\n#     # draw the graph\n#     gw = GraphWorld()\n#     gw.show_graph(g, layout)\n#     gw.mainloop()\n\n# if __name__=='__main__':\n#     import sys\n#     main(*sys.argv)
+-abst
+-pwd
+-$file_basename
+-import time
+-time.sleep(2)
+-import os
+-os.path.join
+-os.path.join()
+-os.path.join('I:\\Python'
+-)
+-abst
+-os.getcwd()
+-os.path.dirname(sys.argv[0])
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-get_subdirec
+-get_subdirec()
+-get_subdirec(pwd)
+-get_subdirec(pwd)
+-os.listdir(pwd)
+-os.path.isdir()
+-os.path.isdir(pdw)
+-os.path.isdir(pwd)
+-os.listdir(pwd)
+-os.path.isdir(dir)
+-os.path.isdir(pwd)
+-help(string)
+-dir(string)
+-import string
+-string.__dict__
+-dir(string)
+-get_subdirec(pwd)
+-print get_subdirec(pwd)
+-print get_subdirec(pwd)
+-print get_subdirec(pwd)
+-os.listdir(pwd)
+-import glob
+-for files in glob.glob("*.txt"):
+-print files
+-for files in glob.glob("*.txt"):
+-	print files
+-print iter.next()
+-print zip('abc')
+-print zip('abc', '123')
+-print zip('abc', AllTrue())
+-print zip('abc', True)
+-y
+-print iter
+-y
+-iter
+-print iter
+-print iter.next()
+-print iter.next()
+-print iter.next()
+-print iter
+-print iter.next()
+-print iter.next()
+-alphabet)cycle()
+-alphabet)cycle(cacophony)
+-alphabet_cycle(cacophony)
+-alphabet_cycle("cacophony")
+-alphabet_cycle("cacophony")
+-alphabet_cycle(cacophony)
+-dir(sys)
+-sys.api_version
+-sys.__doc__
+-help(random)
+-np.fft.fft()
+-np.fft.fft(1)
+-np.fft.fft(12)
+-dir(np.fft.fft())
+-dir(np.fft.fft)
+-help(np.fft.fft)
+-import matplotlib.pyplot as plt
+-t= np.arange(256)
+-sp = np.fft.fft(np.sing(t))
+-sp = np.fft.fft(np.sin(t))
+-freq = np.fft.fftfreq(t.shape[-1])
+-plt.plot(freq, sp.real, freq, sp.imag)
+-plt.show()
+-path = os.path.abspath(os.path.dirname(sys.argv[0]))
+-path
+-help(thinkbayes)
+-help(thinkbayes.Pmf)
+-help(Pmf.Set())
+-help(Pmf.Set)
+-0.5*.75
+-hypos
+-pmf
+-mixes
+-pmf.Update('vanilla')
+-pmd.UPdate('Vanilla')
+-pmf.UPdate('Vanilla')
+-pmf.Update('Vanilla')
+-pmf.Update('Vanilla')
+-mixes
+-pmf.Update('Vanilla')
+-pmf.Update('Vanilla')
+-pmf.Update('Vanilla')
+-pmf = Cookie(hypos)
+-print pmf
+-print pmf
+-print pmf
+-pmf.Update()
+-pmf.Update('vanilla')
+-pmf.Update('vanilla')
+-print path
+-path = os.path.abspath(os.path.dirname(sys.argv[0]))
+-path
+-print path
+-print path
+-pmf
+-pmf.Update('vanilla')
+-pmf
+-print pmf
+-pmf[i]
+-pmf[1]
+-type(pmf)
+-help(Pmf)
+-outcomes
+-outcomes
+-outcomes
+-outcomes
+-die
+-print die
+-print die
+-die = Dice([2,4,6])
+-die
+-die
+-die
+-die
+-import matplotlib
+-dir(matplotlib)
+-suite.Items()
+-suite.Items()
+-size(suite.Items())
+-size(suite.Items()
+-size(suite.Items)
+-qwer = os.path.abspath
+-qwer = os.path.abspath()
+-os.path.dirname(sysarg[0])
+-sys.argv[0]
+-print sys.argv[0]
+-print os.path.dirname(sys.argv[0])
+-print os.path.abspath(os.path.dirname(sys.argv[0]))
+-test()
+-test()
+-g1
+-test()
+-graph[1]
+-g1
+-g1
+-inverse_graph(g1)
+-g1[1]
+-inverse_graph(g1)
+-xrange(len(graph))
+-xrange(len(g1))
+-for i in xrange(4): graphlist = graph[1]
+-for i in xrange(4): graphlist = g1[1]
+-graphlist
+-graphlist.append(graph[1])
+-graphlist.append(g1[1])
+-graphlist
+-graphlist.append(g1[2])
+-graphlist.append(g1[3])
+-graphlist
+-g1[0]
+-g1[]2
+-g1[1]
+-inverse_graph(g1)
+-enumerate(g1)
+-enumerate(graphlist)
+-help(enumerate)
+-inverse_graph(g1)
+-print enumerate(g1)
+-inverse_graph(g1)
+-print g1
+-print inverse_graph(g1)
+-graphlist
+-print g1
+-print inverse_graph(g1)
+-g1
+-inverse_graph[g1]
+-inverse_graph(g1)
+-g1
+-size(g1)
+-g1.size()
+-g1.size
+-shape(g1)
+-g1
+-shape(g1)
+-np.random.random
+-np.random.random()
+-np.size(g1)
+-np.shape(g1)
+-inverse_graph(g1)
+-inverse_graph(g1)
+-inverse_graph(g1)
+-inverse_graph(g1)
+-graph[i]
+-g1[1]
+-xrange(len(graph[1]))
+-xrange(len(g1[1]))
+-inverse_graph(g1)
+-inverse_graph(g1)
+-inverse_graph(g1)
+-g1[1]
+-for i in g1: print i
+-inverse_graph(g1)
+-graph[0][0]
+-g1[0][0]
+-inverse_graph(g1)
+-inverse_graph(g1)
+-inverse_graph(g1)
+-inverse_graph(g1)
+-test()
+-test()
+-gr = copy(g1)
+-test()
+-import copy
+-dir(copy)
+-inverse_graph(g1)
+-import copy
+-inverse_graph(g1)
+-inverse_graph(g1)
+-copy(g1)
+-import copy
+-copy(g1)
+-copy(g1)
+-type(g1)
+-dir(list)
+-dir(mul)
+-help(list.mul)
+-g1.count
+-g1.count()
+-inverse_graph(g1)
+-inverse_graph(g1)
+-inverse_graph(g1)
+-g1
+-g1[0].append(0)
+-g1
+-g1.append([])
+-g1
+-print invg
+-test()
+-print test()
+-xrange(0, 5)
+-xrange(5)
+-xrange(0,5) == xrange(5)
+-range(5) == xrange(5)
+-xrange(5) == xrange(5)
+-5 == 5
+-np.linspace(9, 2, 10)
+-np.linspace(2,3,4)
+-help(linspace)
+-help(np.linspace)
+-EvalExponentialPdf(4,1)
+-EvalExponentialPdf(4,1)
+-dir(matplotlib)
+-import matplotlib
+-dir(matplotlib)
+-dir(csv2rec)
+-dir(matplotlib.mlab)
+-dir(mlab)
+-dir(matplitlib.mlab)
+-dir(matplotlib.mlab)
+-os.path.dir
+-dir(os.path)
+-file1[0]
+-file1
+-type(file1)
+-f.read()
+-file1.read()
+-file1.readline()
+-file1.readline(1)
+-file1.readline()
+-file1.readline(0)
+-file1.readline(1)
+-file1.read()
+-file1.read(file1)
+-file1
+-print file1
+-file1.read()
+-file1.readline(1)
+-file1.readline(0)
+-file1.readline(2)
+-file1.readline(19)
+-file1.readline()
+-file1.readline(0)
+-help(file1)
+-read_graph(file1)
+-read_graph(file1)
+-import networkx
+-help(networkx)
+-import matplotlib.pyplot
+-import matplotlib.pyplot as plt
+-plt.show()
+-dir(plt)
+-size(garph)
+-size
+-size(graph)
+-and
+-size(graph)
+-data
+-data[0]
+-data.keys
+-data.keys()
+-data['node1']
+-data['node1'][0]
+-graph
+-graph
+-graph[9]
+-graph['node']
+-graph['node1']
+-graph['node1'][0]
+-graph['node1'][0][0]
+-dir(add_edge)
+-dir(nx.add_edge)
+-dir(nx.Graph)
+-graph['node1']
+-graph['node1'][0]
+-graph['node1'][0][0]
+-size(graph)
+-shape(graph)
+-dir(shape)
+-np.shape(graph)
+-np.size(graph)
+-graph
+-np.shape(graph[])
+-np.shape(graph['node1'])
+-np.size(graph)
+-np.shape(graph)
+-graph['node1'][0][0]
+-for node1, node2 in graph print graph[node1][node2]
+-for node1, node2 in graph print graph[node1]
+-for node1, node2 in graph print graph[0]
+-[for node1, node2, in graph print graph[node1][node2]]
+-[for node1, node2, in graph print 1]
+-[for node1 in graph print 1]
+-graph.keys()
+-for keys in graph: print 1
+-for keys, nodes in graph: print graph[keys][nodes]
+-for keys, nodes in graph: print graph[keys][nodes][0]
+-for keys, nodes in graph: print graph[keys]
+-for keys in graph: print graph[keys]
+-graph
+-graph
+-graph
+-graph
+-g = zip(graph[:], graph[:][:][0])
+-zip(graph['node1'], graph['node1'][0][0])
+-graph['node1']
+-graph['node1'][0][0]
+-zip(graph['node1'], graph['node1'][0])
+-zip(graph['node1'][0], graph['node1'][0])
+-zip(graph['node1'], graph['node1'])
+-y =zip(graph['node1'], graph['node1'])
+-y
+-zip(y,y)
+-zip(y[0],y[0])
+-y[0]
+-y
+-zip[y[0][0],y[0][0]]
+-zip)y[0][0],y[0][0])
+-zip(y[0][0],y[0][0])
+-y
+-y[0][0]
+-y[0][0][0]
+-zip(y[0][0][0],y[0][0][0])
+-graph['node1']
+-graph
+-graph.keys()
+-graph.node1
+-graph.key('node1')
+-graph.keys('node1')
+-zip([1,2,3],['a','b', 'c'])
+-graph.keys()
+-graph['node1'][:][0]
+-graph['node1'][:]
+-graph['node1'][:][0]
+-graph['node1'][:][0][0]
+-graph['node1'][0][0]
+-graph['node1'][0]
+-graph['node1'][0][0][:]
+-graph['node1'][0]
+-graph
+-graph.keys()
+-zip(graph.keys(), nodelist)
+-size(graph)
+-np.size(graph)
+-type(graph)
+-list(graph)
+-dict(graph)
+-tuple('asdf', 'req')
+-tuple('asdf', 'req')
+-tuple(('asdf', 'req'))
+-y = (1,2)
+-tr\nexcept Exception, e:\n	raise\nelse:\n	pass\nfinally:\n	pass
+-y
+-graph.keys
+-graph.keys()
+-print node
+-node
+-print str(node)
+-print repr(node)
+-graph
+-elements
+-graph
+-graph
+-graph
+-element.split()
+-help(min)
+-graph
+-graph
+-file1
+-J
+-graph
+-graph
+-graph
+-graph
+-graph
+-graph['123'] = 'asdf'
+-graph
+- read_graph
+-y = read_graph()
+-y
+-file1 = open('dynamic.txt')
+-file1
+-for line in file1: print lint.split(',')
+-file1.readline()
+-file1.readline(2)
+-file1.read()
+-file1 = open('dynamic.txt', )
+-file1 = open('dynamic.txt', 'r+')
+-file1
+-file1.read()
+-help(open)
+-file.__doc__
+-graph
+-t  =read_graph()
+-t
+-graph = read_graph()
+-graph
+-M = 1e10
+-J = {}
+-[for node in  graph J[node] = M]
+-[J[node] = M for node in graph]
+-for node in graph: J[node] = M
+-J
+-J['node99'] = 0
+-J
+-next_J = update_J(J, graph)
+-J
+-next_J == J
+-J = next_J
+-J
+-next_J == J
+-next_J = update_J(J, graph)
+-next_J == J
+-J = next_J
+-J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-next_J = update_J(J, graph)
+-J = next_J
+-J
+-min(cost + J[dest] for cost, dest in graph.keys())
+-min(cost + J[dest] for cost, dest in graph)
+-min(cost + J[dest] for cost, dest in graph['node1'])
+-min(1,4,3,2,56,67,41)
+-min(1,4,3,2,56,67,41,90,-12)
+-y = [cost + J[dest] for cost, dest in graph[node]]
+-graph['node1']
+-print [cost, J[dest] for dest, cost in graph[node]]
+-print (cost, J[dest] for dest, cost in graph[node])
+-[for dest, cost in graph[node] for node in graph print dest, cost]
+-[for dest, cost in graph[node] print 1]
+-[for node in graph print 1]
+-[for node in graph: print 1]
+-[print 1 for node in graph]
+-graph
+-for node in graph: print 1
+-[for node in graph print 1]
+-[for node in graph: print 1]
+-[print 1, for node in graph]
+-[print 1: for node in graph]
+-[print 1 for i in xrange(5)]
+-[x**2 for x in xrange(4)]
+-[node for node in graph]
+-[dest, cost for dest, cost in graph[node] for node in graph]
+-[dest, cost for node in graph for dest, cost in graph[node]]
+-[dest, cost for graph[node] in graph for dest, cost in graph[node]]
+-[dest, cost for node in graph for dest, cost in node]
+-[dest, cost for node in graph['node1']]
+-[dest, cost for node in graph[node]]
+-[node for node in graph]
+-[dest, cost for dest, cost in graph['node1']]
+-graph['node1']
+-[(dest, cost) for dest, cost in graph['node1']]
+-[(dest, cost) for node in graph for dest, cost in node]]]
+-[(dest, cost) for dest, cost in graph[node] for node in graph]
+-[(dest, cost) for dest, cost in node for node in graph]
+-[(dest, cost) for (dest, cost) in node for node in graph]
+-[(dest, cost) for dest, cost in node for node in graph]
+-[for node in graph: node]
+-[for node in graph: print node]
+-[for node in graph: print 1]
+-for node in graph: [(dest, cost) for dest, cost in graph[node]]
+-min(for node in graph: [(dest, cost) for dest, cost in graph[node]])
+-for node in graph: [(dest, cost) for dest, cost in graph[node]]
+-for node in graph: [J[dest] + cost for dest, cost in graph[node]]
+-min(for node in graph: [J[dest] + cost for dest, cost in graph[node]])
+-for node in graph: min([J[dest] + cost for dest, cost in graph[node]])
+-for node in graph: [J[dest] + cost for dest, cost in graph[node]]
+-J
+-J['node67']
+-J
+-J
+-bellman_solver(graph)
+-J
+-J
+-J['node67']
+-J['node61']
+-[1 + 2]
+-(2 + 2)
+-J.sort()
+-J.__dict__
+-J.__doc__
+-help(J)
+-J
+-J.keys()
+-Jnodes = J.keys()
+-Jnodes
+-type(Jnodes)
+-Jnodes.sort()
+-Jnodes
+-Jnodes[0]
+-Jnodes[-1]
+-jjnodes = J.keys().sort()
+-jjnodes
+-print jjnodes
+-J.keys().sort()
+-J.keys()
+-sort(J.keys())
+-list.sort(J.keys())
+-p = list.sort(J.keys())
+-p
+-p = J.keys.sort()
+-p = J.keys().sort()
+-J.sort()
+-p = list(J.keys).sort()
+-p = list(J.keys()).sort()
+-p
+-p\\
+-p
+-drop p
+-p = None
+-p
+-jjnodes = None
+-Jnodes
+-Jnodes[0]
+-Jnodes
+-J
+-J
+-J[-1]
+-J[:-1]
+-Jnodes[-1]
+-jnodes = J.keys()
+-jnodes.sort()
+-jnodes[-1]
+-asd
+-asd
+-sad
+-open(aasdf)
+-open('aasdf.txt')
+-ashi
+-def function(self):\n	pass
+-asdads
+-fddddd
+-fdd
+-fds
+-asdf
+-input_timed('sec', 2)
+-input_timed('sec: ', 2)
+-input_timed('sec: ', 30)
+-for x in xrange(1,10):\n	pass
+-asd
+-dynamic
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-dir(enumerate)
+-help(enumerate)
+-help(enumerate)
+-d = zip(['asdf', '1234'])
+-d
+-d = zip('asdf', '1234')
+-d
+-d = dict(d)
+-d
+-enumerate(d)
+-print enumerate(d)
+-for i, a in enumerate(d): print 1
+-for i, a in d: print 1
+-p.coefficients
+-p.differentiate()
+-p.coefficients
+-p.evaluate()
+-p.evaluate(1)
+-import pylab
+-pylab.plt([1,2,3])
+-pylab.plot([1,2,3])
+-np.random.randn(10)
+-import pylab
+-linalg.__doc__
+-np.linalg.__doc__
+-import pylab
+-pyplot.plot([1,2,3])
+-dir(numpy)
+-help(numpy)
+-asdf
+-numpy
+-help(numpy)
+-help(pylab)
+-matplotlib.plot
+-matplotlib.pyplot.plot([1,2,3])
+-plt.pyplot.plot([1,2,3])
+-plt.pyplot.plot([1,2,3])
+-plt.pyplot([1,2,3])
+-plt.plot([1,2,3])
+-dir(pylab)
+-import time
+-timeit
+-import time
+-dir(time)
+-emp_dist()
+-emp_dist(samples)
+-print emp_dist(samples)
+-F
+-F.plot()
+-F.plot()
+-F.plot()
+-import pylab
+-import numpy
+-np.random.rand()
+-import pymc as mc
+-import pymc
+-np.random.rand()
+-import pymc
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-import pymc
+-print asdf
+-print 'asdfasdf'
+-import pymc
+-import networkx
+-networkx.test()
+-np.test()
+-import pymc
+-import pymc
+-import pymc
+-import pymc
+-demo
+-demo(pymc)
+-ipython
+-import pylab
+-import matplotlib
+-import matplotlib
+-import pylab
+-import matplotlib
+-matplotlib.test()
+-import urllib
+-import socket
+-import pymc
+-import pymc
+-import pymc
+-import pymc
+-import pymc
+-import sys
+-import select
+-import os
+-import time
+-import select
+-import pymc
+-import sys
+-import numpy as np
+-np.random.rand()
+-import pymc
+-import pip
+-import pip
+-import pymc
+-import pymc
+-pymc.test()
+-help(searchsorted)
+-x = discrete)rv
+-x = discrete_rc
+-x = discrete_rv
+-x
+-print x
+-x.Q
+-x = discrete_rv(1)
+-x = discrete_rv(1)
+-x = discrete_rv(1)
+-x
+-x.set_q
+-cumsum(4)
+-cumsum(1)
+-cumsum(0.4)
+-x.Q
+-x.draw()
+-x.draw(2)
+-x = discrete_rv(2)
+-x
+-x = discrete_rv(2)
+-x.draw(4)
+-x = discrete_rv(0.4)
+-x.draw(4)
+-x.draw(40)
+-x = discrete_rv(0.1)
+-x.draw(10)
+-x.draw(100)
+-y = x.draw(1000)
+-y.count(1)
+-y.count()
+-del y
+-y
+-x = sample_path(0.2)
+-sys.Version
+-import sys
+-sys.version
+-sample_path(0.4)
+-y = discrete_rv()
+-y = discrete_rv(0.01)
+-y
+-y.draw(1000)
+-uniform(0,1, size=10)
+-searchsorted(uniform(0,1,size=10))
+-np.cumsum(10)
+-np.cumsum(10).searchsorted(uniform(0,1,size=10))
+-np.cumsum(0.4).searchsorted(uniform(0,1,size=10))
+-help(searchsorted)
+-help(np.cumsum.searchsorted)
+-help(np.searchsorted)
+-np.searchsorted([arange(30), 10])
+-import scipy
+-np.searchsorted([arange(30), 10])
+-arange(10)
+-np.linalg.arange(1)
+-np.arange(10)
+-np.searchsorted([np.arange(30), 10])
+-np.searchsorted(np.arange(30), 10)
+-np.searchsorted(np.arange(30), 20)
+-np.searchsorted(np.arange(30), 20.1)
+-np.searchsorted(np.arange(30), 20.1, side='left')
+-np.searchsorted(np.arange(30), 20.1, side='right')
+-np.searchsorted(np.arange(30,.5), 20.1, side='right')
+-np.arange(30, 0.4)
+-np.arange(30, 0.5)
+-np.arange(30, 59)
+-np.arange(0,50, 0.4)
+-np.arange(0,20, 0.5)
+-np.searchsorted(np.arange(0, 20, 0.5), 11.1, side='right')
+-np.searchsorted(np.arange(0, 20, 0.5), 11.1)
+-np.searchsorted(np.arange(0, 20, 0.5), 5)
+-help(np.searchsorted)
+-np.searchsorted(np.arange(0, 20, 0.5), 5)
+-size(np.arange(0,20,0.5))
+-shape(np.arange(0,20,0.5))
+-np.shape
+-y = np.arange(0,20,0.5)
+-y
+-y.size
+-y = SRS
+-r
+-y
+-y.sample_path(1000)
+-y.sample_path(100)
+-y.sample_path(1000)
+-y = SRS
+-y = SRS(1,2,2)
+-y
+-plot(y)
+-plt(y)
+-plt([1,2,3])
+-plt.plot([1,2,3])
+-plt.show()
+-beta.rvs
+-scipy.stats.beta(5,5)
+-numpy.random.rand()
+-scipy.stats.beta(5,5)
+-zxc = beta(5,5)
+-zxc
+-q
+-print q.rvs(100)
+-help(rvs)
+-1+2
+-np.random.random()
+-np.random.rand()
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-1+1
+-1+2
+-1+1
+-2+2
+-1+2
+-33+3
+-1+1
+-y = 1
+-y
+-1+1
+-1+1
+-1+1
+-1+1
+-obs
+-q
+-q.rvs()
+-help(rvs)
+-help(q.rvs)
+-dir(rvs)
+-help(scipy.stats.beta.rvs)
+-help(scipy.stats.beta)
+-help(scipy.stats.beta)
+-bisect(-2*x**3, 0, 5)
+-f(x): -2*x**3
+-f(x) = -2*x**3
+-f = -2*x**3
+-f: -2*x**3
+-f(x): lambda x: -2*x**3
+-f: lambda x: -2*x**3
+-f(x)= lambda x: -2*x**3
+-f = lambda x: -2*x**3
+-f
+-f(2)
+-bisect(f, 0, 5)
+-np.sqrt(5)
+-import scipy
+-from scipy.stats import beta
+-import scipy.stats as stats
+-import scipy.stats
+-import scipy.stats
+-scipy.stats.beta(5,5)
+-np.linalg
+-import np.linalg as linalg
+-import numpy.linalg as la
+-la.cholesky()
+-la.cholesky([[1,2],[2,3]])
+-x
+-x
+-x.size
+-np.size(x)
+-np.size(y)
+-np.interp
+-x
+-xx
+-x == xx
+-x
+-array(x)
+-np.array(x)
+-list(x)
+-globals()
+-x = 3
+-dir()
+-dir(__builtins__)
+-f(20)
+-f(2)
+-f(9)
+-f(0)
+-plural.next()
+-type(f)
+-gen = f()
+-gen
+-gen.next()
+-g
+-gen = g(2)
+-type(gen)
+-gen.next()
+-gen = g(3)
+-gen.next()
+-draws
+-n = 10000000
+-draws = f(n)
+-draws
+-sum(draws)
+-f(50)
+-print f(50)
+-filenames
+-help(os.makedirs)
+-y.next()
+-y
+-print y
+-np.size(y)
+-help(sys)
+-listdir(cwd)
+-listdir(cwd)
+-listdir(cwd)
+-help(commands)
+-listdir(cwd)
+-listdir(cwd)
+-fff.next()
+-fff.next()
+-fff.next()
+-help(pylab)
+-mc.test()
+-5*np.ones(4)
+-help(@)
+-@
+-@pymc.deterministic
+-os.getcwd()
+-os.getcwd()
+-os.getcwd()
+-os.getcwd()
+-pymc.Normal('alpha', mu=1, tau=0.01)
+-print pymc.Normal('alpha', mu=1, tau=0.01)
+-help(pymc.Normal)
+-help(pymc.Normal)
+-help(pymc.Normal)
+-dir(pymc.MCMC)
+-pymc.MCMC.__doc__
+-help(pymc.MCMC)
+-import py2exe
+-help(py2exe)
+-py2exe.__doc__
+-help(py2exe)
+-help(np.linspace)
+-x
+-import sympy
+-sympy.__doc__
+-help(matplotlib.pyplab.plot)
+-help(plt.plot)
+-contents
+-help(sys.stdout)
+-import progressbar
+-help(progressbar)
+-contents
+-webget(url)
+-contents
+-text
+-import progressbar
+-p = progressbar()
+-from progressbar import progressbar
+-help(progressbar)
+-data
+-stuff
+-stuff
+-help(progressbar)
+-import progressbar
+-help(progressbar)
+-dir(urllib2)
+-dir(urllib2.urlopen)
+-help(urllib2.urlopen)
+-help(urllib2)
+-urllib2.__doc__
+-stuff.getinfo()
+-stuff.info()
+-help(urllib2.urlopen().info())
+-help(urllib2.urlopen.info())
+-help(urllib2.urlopen.info)
+-help(info)
+-help(urllib2.info)
+-dir(urllib2)
+-dir(urllib2.urlopen)
+-urllib2.urlopen(url).info()
+-urllib2.urlopen(address).info()
+-help(urllib2.urlopen(address).info())
+-urllib2.urlopen(address).info()
+-dir(urllib2.urlopen(url).info())
+-dir(urllib2.urlopen(address).info())
+-dir(urllib2.urlopen(address).info().getparam())
+-dir(urllib2.urlopen(address).info().items)
+-dir(urllib2.urlopen(address).info().items.__sizeof__)
+-urllib2.urlopen(address).info().items.__sizeof__
+-print urllib2.urlopen(address).info().items.__sizeof__
+-type(url_size)
+-import progressbar
+-help(progressbar)
+-help(progressbar)
+-from progressbar import progressbar
+-from progressbar import ProgressBar
+-pbar = ProgressBar().start()
+-custom_options
+-custom_options
+-type(options2)
+-type(options)
+-help(progressbar.ProgressBar())
+-help(progressbar.ProgressBar())
+-help(progressbar.ProgressBar())
+-stuff
+-urlfile.info()
+-urllib2.urlopen(url).info()
+-print urllib2.urlopen(url).info()
+-str(url_size)
+-123123
+-y = 123123
+-type(y)
+-y = str(y)
+-y
+-type(y)
+-y.split()
+-y.split('%d')
+-y.split('.1f')
+-y.split(2)
+-help(split)
+-y
+-y = str(12301231)
+-y
+-y.split(3)
+-y.split(y, 3)
+-split(y, 3)
+-help(string.split)
+-help(str.split()
+-)
+-help(str.split)
+-y
+-y.split()
+-dir(str)
+-help(str.rsplit)
+-help(str.splitlines)
+-help(str.format)
+-y[1]
+-y[0]
+-y[:]
+-y[:-1]
+-y[-3:]
+-y[-3::]
+-y[::-1
+-]
+-y[::]
+-y[:]
+-y[:-1]
+-y[len(y)-3:]
+-y[(len(y)-3):]
+-len(y)-3
+-y[5:]
+-import re
+-y.split("\\w")
+-y.split(y, "\\w")
+-y.split(y, "%w")
+-y.split("%w")
+-y.split(r"([\\w])")
+-y.split()
+-y.split(2)
+-y.split('2')
+-y = 123456789
+-len(y)
+-y = str(y_)
+-y = str(y)
+-y
+-y.format(f)
+-y[-3]
+-y
+-y]-3
+-y[-3]
+-y[-6]
+-y[-9]
+-len(y)
+-9/3
+-y = str(12345678901)
+-len(y)
+-len(y) % 3
+-[y[i*-3] = '-' + y[i*3] for i in xrange(len(y))]
+-for i in xrange(len(y)): y[i*-3] = '-' + y[i*-3]
+-[y[i*-3] = ['-' + y[i*-3]] for i in xrange(len(y))]
+-y[-3] = '-'+y[-3]
+-y
+-import re
+-y.findall(%i)
+-y.findall('%i')
+-dir(re)
+-help(re.split)
+-re.split('%i', y)
+-help(%i)
+-help('%i')
+-re.split('%s', y)
+-[print i for i in y]
+-[i for i in y]
+-Y = [i for i in y]
+-Y
+-Y.join()
+-Y[-1]
+-Y[-1].join()
+-Y[-1].join(Y[-2])
+-print Y[-1].join(Y[-2])
+-print Y[-1].join(Y[-3])
+-"".join(Y[-1:-3])
+-join(Y[-1:-3])
+-"".join(Y[-1:-3])
+-help(str.join())
+-help(str.join(''))
+-help(str.join('qwe'))
+-help('ewq'.join('qwe'))
+-help(str.join(str))
+-Y
+-for i in xrange(len(Y) % 3): Y[-1*i] = 'asdf'
+-)
+-for i in xrange(len(Y) % 3): print Y[-1*i]
+-Y
+-xrange(len(Y) % 3)
+-Y = [i for i in y]
+-Y
+-for i in xrange( len(Y) % 3 + 1): Y[-1*i] = Y[-1]
+-for i in xrange( len(Y) % 3 + 1): Y[-1*i] = 'asdf'
+-Y
+-y
+-del Y
+-y
+-y[-3]
+-Y = [i for i in y]
+-list = []
+-enumerate(Y)
+-print enumerate(Y)
+-for i in enumerate(Y): print i
+-for i, string in enumerate(Y): print i, string
+-cur_string = ""
+-cur_string
+-for i, string in enumerate(Y): if Y[-i+1] % 3 != 0: cur_string += string else: cur_string += (string + ',')
+-for i, string in enumerate(Y): \n		if Y[-i+1] % 3 != 0: \n			cur_string += string \n		else: \n			cur_string += (string + ',')\n			list.append(cur_string)\n	list.append(cur_string)
+-list1 = []
+-\nfor i, string in enumerate(Y): \n		if Y[-i+1] % 3 != 0: \n			cur_string += string \n			print cur_string\n		else: \n			cur_string += (string + ',')\n			print cur_string\n			list1.append(cur_string)\n			cur_string = ""\n	return cur_string\nlist1.append(cur_string)
+-\nfor i, string in enumerate(Y): \n		if Y[-i+1] % 3 != 0: \n			cur_string += string \n			print cur_string\n		else: \n			cur_string += (string + ',')\n			print cur_string\n			list1.append(cur_string)\n			cur_string = ""\nreturn cur_string\nlist1.append(cur_string)
+-Y
+-Y[-(0+1)]
+-Y[-(1+1)]
+-Y[-(2+1)]
+-Y[-(0+1)] % 3
+-int(Y[-(0+1)]) % 3
+-list1
+-"1" + "2" + "3"
+-1 % 3
+-0 % 3
+--1 % 3
+--2 % 3
+-for i in range(5): print int(-(i+1))
+-for i in range(5): print int(-(i+1)), type(int(-(i+1)))
+-for i, string in enumerate(Y[::-1]): print i, string
+-for i, string in enumerate(Y): print i, string
+-cur_string
+-import numpy as np
+-y[-1]
+-y[-2]
+-y
+-y
+-y.split(y, '.')
+-y.split('.', 3)
+-y.split('.', 1)
+-y.split('.')
+-y.split('.')[0]
+-type(Y)
+-int('$')
+-int('3')
+-isdigit(3)
+-math.isdigit(3)
+-import math
+-math.isdigit(3)
+-import string
+-isdigit(3)
+-"".isdigit(3)
+-"3".isdigit()
+-"#".isdigit()
+-"argument".isdigit()
+-assert "3".isdigit()
+-assert "#".isdigit()
+-accounting_format(str(url_size))
+-accounting_format('123123.12398')
+-'123123.987'.split('.')
+-format('123123.987')
+-format('123123.987')
+-format('123123.987')
+-format('123123.987')
+-list1 = ['1', '2', '3', '4', '5']
+-list1.index(2)
+-list1.index("2")
+-list1.index("1")
+-list1.append('1')
+-list1
+-list1.index('1')
+-help(list1.index())
+-help(list1.index('1'))
+-help(str.index())
+-help(str.index)
+-list1.index('1')
+-format("123123.987")
+-Y
+-Y.index('1')
+-Y.index('1') == 0
+-Y.index(string)
+-string
+-Y.index('1')
+-Y
+-Y.index(string) != 0
+-assert Y.index(string) != 0
+-assert string.isdigit(), Y.index(string) != 0
+-assert Y.index(string) != 0
+-assert string.isdigit() and Y.index(string) != 0
+-string
+-i
+-i - len(Y)
+-len(Y)
+-(i+1-len(Y))
+-float('$123,123.098')
+-stuff
+-stuff
+-format(stuff)
+-type(stuff)
+-str(stuff).split(',')
+-format(123123.987)
+-y
+-import statsmodels
+-help(statsmodels)
+-from statsmodels import pydta
+-from statsmodels import pyDTA
+-import nose
+-dir(nose)
+-import scikits.statsmodels
+-import statsmodels.lib.io as io
+-dir(statsmodels)
+-import statsmodels as sm
+-dir(sm)
+-sm.lib.io
+-import scikits.statsmodels.lib.io as pd
+-dir(scikits.timeseries)
+-stuff
+-stuff
+-size(stuff)
+-shape(stuff)
+-help(write)
+-help(open())
+-help(open()'asdf.txt')
+-help(open()'asdf.txt', )
+-help(open()'asdf.txt', 'w')
+-open.__doc__
+-file.__doc__
+-ffile
+-ffile.readline(1)
+-ffile.readline(14)
+-[i for i in ffile]
+-os.chdir('C:\\\\wyden-statement-on-doj-memo-on-the-killing-of-americans-during-counterterrorism-operations')
+-ffile.readline(1)
+-ffile.readline(11)
+-ffile.readlines(11)
+-ffile.readlines(2)
+-help(readlines)
+-help(ffile.readlines)
+-ffile.readlines(1)
+-ffile.readlines()
+-ffile.readline()
+-dir(json_)
+-dir(json)
+-json.loads(ffile.readline())
+-json.loads(ffile)
+-help(json.lods)
+-help(json.loads)
+-ffile.close())
+-ffile.close()
+-ffile
+-del ffile
+-ffile
+-open('usagov.txt', 'r')
+-close('usegov.txt)
+-close('usegov.txt')
+-__builtins__.close('usegov.txt')
+-dir(__builtins__)
+-helps(json.loadas)
+-helps(json.loads)
+-help(json.loads)
+-cwd
+-traceback
+-import traceback
+-dir(traceback)
+-cwd
+-os.chdir('C:/user')
+-os.chdir('D:/downloads')
+-os.getcwd()
+-os.lisdir()
+-os.listdir
+-os.listdir()
+-os.listdir(1)
+-help(os.listdir())
+-help(os.listdir)
+-os.listdir('D:/downloads')
+-open(path).readline()
+-recrods
+-records
+-json.loads(ffile.readline())
+-size(ffile)
+-type(ffile)
+-json.loads(ffile.readline())
+-json.loads(ffile.readline(1))
+-ffile.readline(1)
+-ffile.readline(11)
+-json.loads(ffile.readline(11))
+-json.loads(ffile.readlines)
+-ffile.readlines
+-ffile.readlines()
+-ffile.readlines()
+-os.getcwd()
+-ffile.readlines()
+-records
+-ffile
+-ffile
+-dir(ffile)
+-ffile.read()
+-ffile.__doc__
+-dir(ffile)
+-ffile.__sizeof__
+-ffile.__sizeof__()
+-help(ffile.__sizeof__())
+-help(ffile.__sizeof__)
+-ffile.__sizeof__()
+-dir(ffile)
+-json.loads(ffile.readlines())
+-json.loads(ffile.readlines()32)
+-json.loads(ffile.readlines(32))
+-json.loads(ffile.readline(32))
+-json.loads(ffile.readline(3)
+-)
+-json.loads(ffile.read())
+-json.loads(ffile.readlines())
+-json.loads(ffile.readlines(44))
+-json.loads(ffile.readlines())
+-json.loads(ffile.readlines()1024)
+-json.loads(ffile.readlines(1024))
+-json.loads(ffile.readlines(4048))
+-os.getcwd()
+-ffile
+-\nfor line in ffile.readlines():
+-print 1
+-\nfor line in ffile.readlines():\n	print 1
+-\nfor i in xrange(10):
+-\nfor i in xrange(10):\n	print 1
+-\nfor line in ffile.readlines():\n	print 1
+-ffiles.readlines()
+-ffile.readline()
+-ffile.readlines()
+-ffile.readlines()
+-open(path)
+-ffile
+-ffile.readlines()
+-\nimport os, sys, time\ncwd = os.path.abspath(os.path.dirname(sys.argv[0]))\nos.chdir(cwd)\nimport numpy as np, pandas as pd, matplotlib.pylab as plt\nfrom numpy import *\nimport json, urllib2\n\n\ndef format(number):\n	''' Takes a number, inserts commas for thousands. May not work for strings.'''\n	y = str(number).split('.')\n	Y, size_str = [i for i in y[0]], ""\n	for i, string in enumerate(Y[::-1]):\n		if int(-(i+1)) % 3 != 0:\n			size_str += string\n		else:\n			try:\n				assert string.isdigit() and (i+1-len(Y)) != 0\n				size_str += (string + ',')\n			except AssertionError:\n				size_str += string\n	if len(y) > 1:\n		Y = size_str[::-1] + '.' + y[1]\n	else:\n		Y = size_str[::-1]\n	return Y\n\n\ndef webget(url):\n	data_list = []\n	try:\n		urlfile = urllib2.urlopen(url)\n		url_size = int(urlfile.info().getheaders("Content-Length")[0])\n\n		# progress bar calculations\n		chunk = int(2**ceil(log2(url_size/20)))\n		num_chunks = int(ceil(url_size / chunk))\n		perc_chunks = 100.0/num_chunks\n		print 'completion:'\n		for num in xrange(num_chunks):\n			data = urlfile.read(chunk)\n			data_list.append(data)\n			sys.stdout.write(" %.1f %s \\n" % (num*perc_chunks, r'%'))\n			sys.stdout.flush()\n\n		sys.stdout.write(" 100 %")\n		sys.stdout.write('\\nRead: %s bytes\\n' % format(url_size))\n		return data_list\n\n	except IndexError:\n		print 'URL: Content-Length unknown, proceeding with default chunk size: 4048 bytes'\n		chunk = 4048\n		count = 0\n		while 1:\n			count += 1\n			data = urlfile.read(chunk)\n			if not data:\n				sys.stdout.write('\\n100 %\\n')\n				print 'Read: ~%s bytes' % format((count*chunk))\n				break\n				return data_list\n			data_list.append(data)\n			sys.stdout.write(':')\n\n	except IOError:\n		sys.stderr.write('error reading URL: ' + url)\n\npath = 'usagov.txt'\n\ntry:\n	ffile = open(path, 'r')\nexcept SyntaxError and IOError:\n	url = 'http://bitly.measuredvoice.com/bitly_archive/usagov_bitly_data2013-02-06-1360133211'\n	stuff = webget(url)\n	ffile = open(path, 'w')\n	for line in stuff:\n		ffile.write(line)\n\n#records = [json.loads(line) for line in ffile.readlines()]\n\n\nprint 'json sucks'
+-print open(path)
+-[print 1 for line in open(path)]
+-[print "1" for line in open(path)]
+-[line for line in open(path)]
+-ffile.readlines()
+-ffile
+-ffile[237]
+-ffile = list(ffile)
+-type(ffile)
+-dir(ffile)
+-dir(ffile)
+-ffile.__getattribute__
+-ffile = dict(ffile)
+-import numpy as nup
+-%timeit
+-ffile.readline(1)
+-ffile.readline(100)
+-ffile.readline(89)
+-size(ffile.readline())
+-size(ffile.readlines())
+-test = []
+-for line in ffile.readlines(): test.append line
+-for line in ffile.readlines(): test.append(line)
+-test
+-size(ffile.readlins())
+-size(ffile.readlines())
+-size(ffile.readlines())
+-test = []
+-for line in ffile.readlines(): test.append(line)
+-test
+-test[0]
+-test[1]
+-test[2]
+-test[3]
+-test[4]
+-test[5]
+-test[6]
+-json.loads(test[6])
+-json.loads(test[1])
+-test[237]
+-test[238]
+-json.loads(test[238])
+-asdf = [i for i in xrange(13)]
+-asdf
+-asdf = [dict(i,j) for i, j in zip(['12344567', 'qwerasdf'])]
+-zip(['12344567', 'qwerasdf'])]
+-zip(['12344567', 'qwerasdf'])
+-zip('12344567', 'qwerasdf')
+-asdf = [dict(i,j) for i, j in zip('12344567', 'qwerasdf')]
+-asdf = [dict(i) for i, j in zip('12344567', 'qwerasdf')]
+-asdf = [(i, j) for i, j in zip('12344567', 'qwerasdf')]
+-asdf
+-asdf = [(j*2, i*2) for i, j in zip('12344567', 'qwerasdf')]
+-asdf
+-json.loads(asdf)
+-json.loads(asdf[1])
+-records[1]
+-records[2]
+-records[23]
+-json.loads(records[1])
+-records[4]
+-raw_data[524]
+-raw_data[523]
+-json.loads(records[524])
+-json.loads(raw_data[524])
+-size(raw_data)
+-len(raw_data)
+-records
+-size(raw_data)
+-size(raw_data)
+-raw_data[-1]
+-raw_data[-2]
+-import math
+-2**15
+-2**18
+-2**22
+-y = 2 **2
+-y = 2 **22
+-sqrt(y)
+-4048*2048
+-log(y)
+-4048*16
+-np.ceil(log(y))
+-np.floor(log(y))
+-1024*15
+-stuff
+-type(stuff)
+-urlfile.read(4048)
+-urlfile = urllib2.urlopen(url)
+-urlfile.read(1024*10)
+-urlfile.read(1024)
+-urlfile = urllib2.urlopen(url)
+-urlfile.read()
+-urlfile = urllib2.urlopen(url)
+-qwer = []
+-qwer
+-data = urlfile.read(2048)
+-data
+-qwer.append(data)
+-qwer
+-data = urlfile.read(2048)
+-qwer.append(data)
+-qwer
+-data = urlfile.read(2048)
+-qwer.append(data)
+-qwer
+-data = urlfile.read(2048)
+-qwer.append(data)
+-qwer
+-data = urlfile.read(2048)
+-qwer.append(data)
+-qwer
+-size(qwer)
+-for line in qwer: print line
+-help(file)
+-help(file)
+-dir(file)
+-help(file.write)
+-dir(file)
+-ff = open(path)
+-ff.__sizeof__
+-ff.__sizeof__()
+-help(ff.__sizeof__)
+-size(record)
+-record[1]
+-records[1]
+-help(cmd)
+-help(cwd)
+-help(os.getcwd())
+-help(os.getcwd)
+-help(os.getcmd)
+-?
+-records[1]
+-shape(records)
+-size(records[1])
+-size(records[1][""])
+-size(records[1][:])
+-size(records[1].keys)
+-records[1].keys
+-records[1].keys()
+-size(records[1].keys())
+-records.shape()
+-dir(records)
+-help(shape)
+-records.keys()
+-records[0].keys()
+-records[0]['tz']
+-from collections import defaultdict
+-dir(defaultdict)
+-help(collections)
+-help(defaultdict)
+-tt = defaultdict()
+-tt
+-tt.type()
+-type(tt)
+-rr = dict()
+-rr
+-rr == tt
+-counts = get_counts(time_zones)
+-counts = get_counts(time_zone)
+-counts['America/New_York']
+-len(time_zone)
+-counts
+-count_dict.items()
+-top_counts(counts)
+-counts.items()
+- size(count.items())
+- size(count)
+-size(count)
+-size(counts)
+-top_counts(counts)
+-from collections import Counter
+-counts = Counter(time_zones)
+-conts.most_common(10)
+-counts.most_common(10)
+-top_counts(counts)
+-counts2.most_common(10)
+-top_counts(counts)
+-counts2.most_common(10)
+-dir(counts2.most_common)
+-help(counts2.most_commmon)
+-help(Counter)
+-dir(Counter)
+-help(counts2.most_commmon())
+-help(most_common)
+-top_counts(counts) == counts2.most_common(10)
+-counts
+-counts.items9)
+-counts.items()
+-help(sort)
+-dict.sort()
+-type(counts)
+-help(counts.sort)
+-help(counts.sort())
+-help((a,b).sort())
+-help(sort)
+-value_key_pairs = [(tz, count) for tz, count in count.items()]
+-value_key_pairs = [(tz, count) for tz, count in top_counts.items()]
+-value_key_pairs = [(tz, count) for tz, count in counts.items()]
+-type(value_key_pairs)
+-help(list.sort())
+-help(list.sort)
+-help(value_key_pairs.sort)
+-help(value_key_pairs.sort())
+-value_key_pairs.__methods__
+-value_key_pairs.__method__
+-dir(value_key_pairs)
+-dir(value_key_pairs.sort)
+-dir(value_key_pairs.sort())
+-help(value_key_pairs.sort)
+-value_key_pairs = [(tz, count) for tz, count in counts.items()]
+-value_key_pairs
+-value_key_pairs[3]
+-value_key_pairs.sort()
+-value_key_pairs
+-value_key_pairs = [(tz, count) for tz, count in counts.items()]
+-value_key_pairs
+-value_key_pairs.sort()
+-value_key_pairs
+-help(value_key_pairs.sort())
+-help(value_key_pairs.sort)
+-value_key_pairs.sort.__doc__
+-dir(value_key_pairs.sort)
+-dir(value_key_pairs.sort.__cmp__)
+-dir(value_key_pairs.sort)
+-value_key_pairs = [(tz, count) for tz, count in count2.items()]
+-value_key_pairs = [(tz, count) for tz, count in top_counts\r.items()]
+-value_key_pairs = [(tz, count) for tz, count in top_counts.items()]
+-value_key_pairs = [(tz, count) for tz, count in counts.items()]
+-value_key_pairs
+-value_key_pairs[1][0
+-]
+-help(value_key_pairs.sort(keys))
+-help(value_key_pairs.sort(keys=))
+-value_key_pairs.sort(key=value_key_pairs[][1])
+-(key=value_key_pairs[][1])
+-value_key_pairs = [(tz, count) for tz, count in counts.items()]
+-value_key_pairs.sort(key=value_key_pairs[][1])
+-value_key_pairs.sort(key=value_key_pairs[:][1])
+-value_key_pairs.sort(key=value_key_pairs[:][:])
+-help(sort)
+-help(list.sort)
+-[(a,b) for a, b in zip('asdf','1234')]
+-[(a,b) for b, a in zip('asdf','1234')]
+-G = [(a,b) for b, a in zip('asdf','1234')]
+-G.sort()
+-G
+-G.sort(key = lambda tup: tup[1])
+-G
+-G.sort()
+-G
+-G.sort(keys= lambda f: f[1])
+-G.sort(key= lambda f: f[1])
+-G
+-G.sort(key=lambda f: f[0])
+-G
+-collections.__doc__
+-help(collections)
+-collections.
+-collections
+-collections.most_common
+-import collections
+-help(collections)
+-frame
+-frame['tz'][:10]
+-frame['tz'][-10"]
+-frame['tz'][:10]
+-tz_counts =  frame['tz'].value_counts()
+-tz_counts
+-np.linalg.cholesky()
+-dir(numpy)
+-dir(np)
+-os.path.dirname(os.path.normpath(os.path.abspath(__file__)))sys.path.insert(0, SUBLIME_ROPE_PATH)
+-os.path.dirname(os.path.normpath(os.path.abspath(__file__))
+-)
+-os.path.dirname(os.path.normpath(os.path.abspath(__file__)))
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-import scipy as sp
+-dir(scipy)
+-dir(sp)
+-sp.stats
+-dir(sp.stats)
+-help(sp)
+-import os
+-os.getcwd
+-os.getcwd()
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-import sys
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-sp.stats
+-dir(sp)
+-import scipy.stats
+-import scipy.stats as stats
+-dir(stats)
+-top_counts
+-top_counts
+-clean_tz = frame['tz'].fillna('Missing Obs')
+-clean_tz
+-tz_clean
+-tz_clean.most_common()
+-dir(Series)
+-frames['tz'].most_common(10)
+-tz_clean.value_counts
+-tz_counts
+-type(tz_counts)
+-plt
+-frame['a'][1]
+-frames['a'][1]
+-frames['a'][50]
+-frames['a'][51]
+-frames.a.dropna
+-help(frames.a)
+-pyhelp(numpy)
+-dir(frames.a)
+-results
+-results[:5]
+-results.value_counts()[:8]
+-results.value_counts()[-5:]
+-results.value_counts()[-20:]
+-results.value_counts()[-30:]
+-operating_sysmte
+-operating_system
+-operating_system
+-cframe
+-dir(Series)
+-dir(contains)
+-help(np.where)
+-dir(np.where)
+-dir(np.where)
+-dir(np.where.__str__)
+-dir(np.where.__str__.)
+-dir(np.where.__str__)
+-dir(cframe)
+-dir(cframe.__str__)
+-dir(Series.str)
+-dir(Series)
+-pandas.__doc__
+-pd.__doc
+-pd.__doc__
+-help(pd)
+-help(pandas)
+-help(pd)
+-dir(Series)
+-dir(Series.str)
+-dir(Series.str.contains)
+-dir(Series.str.contains())
+-cframe
+-operating_system[:5]
+-by_tz_os = cframe.groupby(['tz', operating_system])
+-by_tz_od
+-by_tz_os
+-print by_tz_os
+-agg_counts
+-type(agg_counts)
+-type(tz_clean)
+-type(cframe)
+-type(frame)
+-agg_counts = add_counts['tz'].fillna('Missing')
+-agg_counts = agg_counts['tz'].fillna('Missing')
+-agg_counts
+-agg_counts[:10]
+-agg_counts[:10]
+-agg_counts[1:10]
+-agg_counts[:10][0]
+-size(agg_counts)
+-shape(agg_counts)
+-agg_counts[:10]['Windows']
+-qwer = dict(agg_counts)
+-qwer
+-shape(qwer)
+-qwer[1]
+-qwer['Windows']
+-del qwer
+-import zipfile
+-help(zipfile0)
+-help(zipfile)
+-zipfile.__doc__
+-dir(zipfile)
+-os.chdir('D://')
+-os.getcwd()
+-os.chdir('D://m1mil')
+-os.getcwd()
+-os.listdir()
+-os.listdir('D://m1mil')
+-os.chdir('D:/')
+-os.getcwd()
+-_check_zipfile('m1mil')
+-_check_zipfile('m1mil.zip')
+-dir(_check_zipfile)
+-zipfile._check_zipfile('m1mil.zip')
+-import zipfile as zp
+-zp.iszipfile('m1mil.zip')
+-zp.is_zipfile('m1mil.zip')
+-dir(zp)
+-help(zp.zlib)
+-dir(zp)
+-help(zp.ZipFile)
+-zfile = zp.ZipFile('m1mil.zip')
+-type(zfile)
+-\nfor name in zfile.namelist():
+-(dirname, filename) = os.path.split(name)
+-\nfor name in zfile.namelist():\n	(dirname, filename) = os.path.split(name)\n	print 'Decompresssing ' + filename  + ' to ' + dirname\n	if not os.path.exists(dirname):\n		os.mkdir(dirname)\n	fd = open(name, 'w')\n	fd.write(zfile.read(name))\n	fd.close()
+-\\
+-help(zfile.extract)
+-dir(zfile)
+-zfile._GetContents
+-zfile._GetContents()
+-y = zfile._GetContents()
+-y
+-zfile.printdir
+-zfile.printdir()
+-dir(zfile)
+-help(zfile.filename)
+-help(zfile.getinfo)
+-zfile.getinfo
+-zfile.getinfo()
+-zfile.getinfo('m1mil.zip')
+-zfile.filelist
+-zfile.filelist()
+-zfile.namelist
+-zfile.namelist()
+-dir(zfile)
+-help(zfile.extractall)
+-zfile.extractall()
+-help(zfile.extractall())
+-help(zfile.extractall)
+-pwd
+-os.pwd()
+-help(pwd)
+-os.getcwd()
+-os.getcwd()
+-os.chdir('D://')
+-zfile = zp.ZipFile()
+-help(zp.ZipFile)
+-zfile = zp.ZipFile('D://rarfile-2.5.tar.gz')
+-rarfile = 'rarfile-2.5.tar.gz'
+-rarfile
+-zp.is_zipfile(rarfile)
+-import gzip
+-dir(gzip)
+-gzip.open(rarfile)
+-help(gzip.write32u)
+-help(gzip.write32u())
+-help(gzip.write32u)
+-help(gzip)
+-gzip.open(rarfile)
+-ffile = gzip.open(rarfile)
+-dir(gzip)
+-data = []
+-for line in ffile: data.append(ffile.read32)
+-help(ffile)
+-ffile = gzip.open(rarfile, 'rb')
+-ffile.read()
+-ffile = gzip.open(rarfile, 'rb')
+-import zlib
+-rarfile = 'rarfile.-2.5.tag.gz'
+-import gzip
+-ffile = gzip.open(rarfile, 'rb')
+-rarfile = 'rarfile.-2.5.tar.gz'
+-ffile = gzip.open(rarfile, 'rb')
+-rarfile = 'rarfile-2.5.tar.gz'
+-ffile = gzip.open(rarfile, 'rb')
+-rarfile = 'D://rarfile-2.5.tar.gz'
+-ffile = gzip.open(rarfile, 'rb')
+-import zlib
+-import tarfile
+-help(tarfile)
+-dir(tarfile_)
+-dir(tarfile)
+-tarfile.is_tarfile(rarfile)
+-dir(tarfile.open)
+-tarfile.getmemers(rarfile)
+-tarfile.getmembers(rarfile)
+-TarFile.getnames(rarfile)
+-tarfile.getnames(rarfile)
+-dir(tarfile)
+-dir(tarfile.extractall)
+-dir(tarfile.extractall())
+-dir(extractall)
+-ffile = tarfile.open(rarfile)
+-type(ffile)
+-ffile.extractall('D://unrar_install')
+-os.chdir('D://unrar_install')
+-os.listdir
+-os.listdir()
+-os.listdir('D://unrar_install')
+-os.chdir('D://unrar_install//rarfile-2.5')
+-os.listdir(D://unrar_install//rarfile-2.5)
+-place = D://unrar_install//rarfile-2.5
+-place = 'D://unrar_install//rarfile-2.5'
+-os.listdir(place)
+-setup.py install
+-python setup.py install
+-import setup.py
+-place = 'D://unrar_install//rarfile-2.5'
+-os.listdir(place)
+-excecfile(place)
+-execfile(place+'setup.py')
+-execfile(place+'//setup.py')
+-os.getcwd()
+-place
+-os.listdir(place)
+-os.chdir(place)
+-os.getcwd()
+-os.listdir(cwd)
+-cwd = os.getcwd()
+-cwd
+-os.listdir(cwd)
+-python setup.py install
+-import setup.py
+-place = 'D://unrar_install//rarfile-2.5'
+-os.chdir(place)
+-os.getcwd()
+-import setup.py install
+-execfile(setup.py)
+-help(execfile)
+-help(execfile, install)
+-help('modules')
+-import pip
+-help(pip)
+-dir(pip)
+-pip.__doc__
+-pip.__doc__()
+-python setup.py install
+-setup.py install
+-os.getcwd()
+-idle.py -r setup.py install
+-python.exe setup.py install
+-import pylab
+-dir(pylab)
+-%timeit
+-os.name
+-import pylab
+-import numpy as np
+-np.random.rand()
+-np.random.rand(1)
+-print 'asdf'
+-%timeit
+-%timeit for i in xrange(1000000): print i**i
+-ipython
+-if:\n	pass
+-asdf
+-?
+-1+1
+-2+2
+-3_3
+-import numpy as np
+-print 1 + 1
+-%timeit for i in xrange(10000): i*i
+-import pylab
+-import numpy as np\nimport os, sys\n%pylab inline
+-os.chdir(os.path.abspath(os.path.dirname(sys.argv[0])))
+-print os.getcwd()
+-print np.e, np.arange(5)
+-${\\LaTeX}$ test:  $\\frac{{\\textit d}\\ S_0}{S_t} = \\mu\\ dt + \\sigma\\ dW $ \n\nYou'll need to close any mark-up commands with curly parenthesis and $, otherwise you get normal text.
+-x = np.linspace(-50, 50, 500)
+-plot(x**(2) * np.tan(x))\nshow()
+-plot.show()
+-import matplotlib.pyplot as plt
+-plt.show()
+-%quickref
+-os.getcwd()
+-os.getcwd()
+-os.listdir(cwd)
+-os.listdir(cwd+'//ml-1m')
+-ffile.type
+-type(ffile)
+-ffile.info
+-dir(ffile)
+-ffile.__sizeof__
+-ffile.__sizeof__()
+-zfile.close()
+-os.listdir()
+-os.listdir(cwd+'//ml-1m')
+-help(pd.read_table())
+-help(pd.read_table)
+-pd.read_table.__doc__
+-print pd.read_table.__doc__
+-print pd.read_table.__func__
+-print pd.read_table.__name__
+-print pd.read_table.getmembers()
+-print pd.read_table.getmembers
+-dir(pd.read_table)
+-print pd.read_table.__defaults__
+-print pd.read_table.__module__
+-import inspect
+-dir(inspect)
+-inspect(pd.read_table)
+-inspect.Arguments(pd.read_table)
+-inspect.Arguments(pd.read_table())
+-inspect.getargspec(pd.read_table)
+-inspect.getargspec(open)
+-inspect.getargspec(os.chdir)
+-inspect.getargspe(zp.ZipFile)
+-inspect.getargspec(zp.ZipFile)
+-inspect.getargspec(zp.ZipFile())
+-inspect.getargspec(pd.read_table)
+-inspect.getargspec(zp.ZipFile)
+-import spiderlib
+-import spyderlib
+-dir(spyderlib)
+-dir(inspect)
+-import inspect as ins
+-ins.ArgInfo(pd.read_tables)
+-ins.ArgInfo(pd.read_table)
+-print ins.getargspec(pd.read_table)
+-dir(ins)
+-print ins.getmodfuleinfo(pd.read_table)
+-print ins.getmoduleinfo(pd.read_table)
+-print ins.getargs(pd.read_table)
+-print ins.getargvalues(pd.read_table)
+-print ins.getargspec(pd.read_table)
+-print ins.getargspec(pd.read_table)
+-import inspect
+-inspect.getargs(os.chdir)
+-inspect.getargs(pd.read_tabl)
+-inspect.getargs(pd.read_table)
+-args(pd.read_table)
+-dir(inspect)
+-import inspect
+-dir(inspect)
+-ins(pd.read_table)
+-movies['genres']
+-type(movies['genres'][0])
+-movies['genres'][0]
+-movies['genres']
+-type(movies['genres'])
+-type(movies['genres'][0])
+-dir(str)
+-ins(str.replace)
+-help(str.replace)
+-test = 'Animaion|Children's|Comedy'
+-test = 'Animaion|Children\\'s|Comedy'
+-test
+-movies['genres']
+-movies['genres'][0]
+-repr(movies['genres'][0])
+-test = 'Animaion|Children\\'s|Comedy'
+-test
+-test.replace("'", "\\\\s")
+-test = 'Animation|Children\\'s|Comedy'
+-test.replace("'", "\\'")
+-test.replace("'", "//'")
+-test.replace("'", "\\\\'")
+-test = 'Animation|Children\\'s|Comedy'
+-test.replace("'", "")
+-for obs in movies['genres'] print obs
+-for obs in movies['genres']: print obs
+-for obs in movies['genres'][:5]: print ibs
+-for obs in movies['genres'][:5]: print obs
+-for obs in movies['genres'][:5]: print type(obs)
+-for obs in movies['genres'][:5]: obs.replace('h','u')
+-movies['genres'][:5]
+-enumerate(movies['genres'])
+-print enumerate(movies['genres'])
+-help(enumerate)
+-data.ix[0]
+-help(data.ix)
+-data.ix.__doc__
+-for titles in movies: print titles
+-for titles in movies: titles
+-movies
+-movies[0]
+-movies['title'][0]
+-movies[:][0]
+-movies[0]
+-movies.getkeys()
+-movies.keys()
+-movies[[movie_id, title, genres]][0]
+-movies[['movie_id', 'title', 'genres'][0]
+-]
+-movies[['movie_id', 'title', 'genres']][0]
+-movies[('movie_id', 'title')]
+-movies['title']
+-movies.iteritems
+-movies.iteritems()
+-movies.iteritems
+-movies[movies.iteritems]
+-movies.iteritems
+-help(movies.iteritems))
+-help(movies.iteritems)
+-for key in movies.iteritems: print key
+-for key in movies.iteritems(): print key
+-for key in movies.iteritems(): print key_name
+-movies
+-type(movies)
+-movies[][0]
+-movies[0]
+-movies[::0]
+-movies.sort()
+-movie['title']
+-movies['title']
+-size(movies['titles'])
+-size(movies['title'])
+-shape(movies['title'])
+-shape(movies)
+-reshape(movies, (3, 3883))
+-shape(movies)
+-movies.T
+-shape(movies)
+-movies
+-print movies
+-print movies[]
+-movies.keys
+-movies.keys()
+-movies.sort(key= lambda tup: tup[][0])
+-movies.sort(key= lambda tup: tup['genres'][0])
+-ins(movies.sort)
+-help(list.sort)
+-help(dict.sort)
+-type(movies)
+-type1 = type(movies)
+-type1
+-help(type1.sort)
+-movies.sort(columns='genres')
+-print movies
+-print movies['genres']
+-print movies['genres'].sort(column='genres')
+-print movies['genres'].sort(columns='genres')
+-print movies['genres'].sort('genres')
+-print movies['genres'].sort(['genres'])
+-print movies['genres'].sort([A])
+-print movies.sort(['genres'])
+-print movies
+-print movies['genres']
+-print movies.sort(column='genres')['genres']
+-print movies.sort(columns='genres')['genres']
+-print movies['title' == 'Toy Story']
+-print movies['title']['Toy Story']
+-movies
+-dir(movies)
+-help(data.ix)
+-help(movies.to_excel)
+-movies.to_excel(ExcelWriter('output.xlsc'))
+-movies.to_excel(ExcelWriter('output.xlsc').save)
+-help(ExcelWriter)
+-xls = open('output1.xlsx', 'w')
+-xls
+-movies.to_excel(xls)
+-help(ExcelWriter)
+-help(to_excel.ExcelWriter)
+-help(movies.to_excel.ExcelWriter)
+-help(movies.to_excel)
+-print cwd+'.xlsx'
+-print cwd+'\\testest.xlsx'
+-print cwd+'/testest.xlsx'
+-print cwd + r'\\testest.xlsx'
+-movies.to_excel(cwd + r'\\outputest.xlsx')
+-import open_url
+-import thread, os, red
+-import thread, os, re
+-help(view)
+-import sublime, sublime_plugin
+-os.chdir(r'K:\\Sublime Text 2')
+-os.getcwd()
+-import sublime
+-os.listdir(cwd)
+-cwd = r'K:\\Sublime Text 2'
+-cwd
+-os.listdir(cwd)
+-import sublime.py
+-help(import)
+-import sys
+-sys.path.append(cwd)
+-import sublime
+-help(sys.path)
+-help(sys.path.append)
+-help(sys.path.insert)
+-dir(sys.path)
+-os.getcwd()
+-sys.path.append(cwd)
+-sys.path.append('K:/Sublime Text 2')
+-import sublime
+-os.listdir(cwd)
+-sys.path.append(cwd)
+-import sublime
+-import sublime_plugin
+-'D:/DwD.pdf'
+-print r'  ''
+-print r'  '
+-print r'\\  '
+-print r'  '
+-print \\s\\s
+-print \\s
+-import string
+-help(string.split)
+-t = 'asdf, a1234'
+-help(t.split())
+-help(t.split)
+-q ,w = t.split(",")
+-print q, w
+-print "%r and %r" % (q, w)
+-help(w.strip)
+-w.strip()
+-print "%r and %r" % (q, w)
+-w = w.strip()
+-print "%r and %r" % (q, w)
+-rr = '"ohyea"'
+-r
+-rr
+-rr.strip('"')
+-help(self.view.window().open_file(self.open_me))
+-help(view.window().open_file(self.open_me))
+-help(view.sel)
+-help(self.view.sel)
+-help(line_url.view.sel)
+-yy = line_url()
+-yy = LineUrlCommand()
+-data
+-moves['title']
+-movies['title']
+-movies['Toy Story']
+-movies['title']['Toy Story']
+-movies['title']
+-movies['title']['Toy Story (1995)']
+-movies[0]
+-movies[['movie_id', 'title', 'genres']]
+-movies[['movie_id', 'title', 'genres']]['Toy Story (1995)
+-movies[['movie_id', 'title', 'genres']]['Toy Story (1995)']
+-movies[['movie_id', 'title', 'genres']]
+-size(movies)
+-shape(movies)
+-print movies
+-for i in movies: print i
+-for i, j in movies: print i, j
+-for i, j in movies[i][j]: print i, j
+-movies[:5]
+-movies['movie_id']
+-movies['movie_id':5]
+-movies[:5]['title']
+-movies[:5][['movie_id', 'genre']]
+-movies[:5][['movie_id', 'genres']]
+-movies[:-5][['movie_id', 'genres']]
+-movies[-5:][['movie_id', 'genres']]
+-movies[-5:][['title', 'genres']]
+-data
+-data[:5]['rating', 'title']
+-data[:5][['rating', 'title', 'genres']]
+-shape(users)
+-shape(ratings)
+-data[:5][['rating', 'title', 'genres']]
+-data.ix[0]
+-help(data.ix)
+-mean_ratings = data.pivot_table('rating', rows='title', cols='gender', aggfunc='mean')
+-mean_ratings[:5]
+-dir(data.pivot_table)
+-mean_ratings[:10]
+-type(mean_ratings)
+-help(mean_ratings.sort())
+-dir(mean_ratings)
+-help(mean_ratings.sort)
+-ins(mean_ratings.sort())
+-ins(mean_ratings.sort)
+-ins(mean_ratings.sort_index)
+-help(mean_ratings.sort_index)
+-mea_rating.sort(['rating'])
+-mean_rating.sort('rating')
+-mean_ratings.sort('ratings')
+-mean_ratings.sort(['ratings'])
+-mean_ratings.sort(['rating'])
+-mean_ratings.sort('rating')
+-mean_ratings
+-mean_ratings[:10]
+-rrr = mean_ratings.sort('F')
+-rrr
+-rrr[2-]
+-rrr[20]
+-rrr[:20]
+-mean_ratings[:10]
+-mean_ratings[:-10]
+-mean_ratings[-10:]
+-del rrr
+-rrr = mean_ratings.sort('F', ascending={0,1})
+-rrr
+-rrr[:10]
+-rrr[-10:]
+-mean_ratings
+-mean_ratings.keys()
+-fff = mean_ratings.sort([F, M])
+-fff = mean_ratings.sort(['F', 'M'])
+-fff
+-fff[:10]
+-fff[:-10]
+-fff[-10:]
+-fff = mean_ratings.sort(['M'])
+-fff[:-10]
+-fff[:10]
+-fff[-10:]
+-ratings_by_title[:10]
+-shape(data)
+-ffile = open('check12.txt', 'w')
+-for line in data: ffile.writeline()
+-dir(ffile)
+-for line in data: ffile.writelines()
+-for line in data: ffile.writelines(line)
+-ffile.close()
+-os.getcwd()
+-data
+-for i in data: print i
+-data[user_id]
+-data['user_id']
+-for obs, cat in data[obs][cat]: print 1
+-for obs, cat in data: print 1
+-for obs, cat in data[obs]: print 1
+-for obs, cat in data[:][cat]: print 1
+-for obs, cat in data[:][:]: print 1
+-shape(data)
+-ffile = open('check12.txt', 'w')
+-for cat in data: print cat
+-\nfor cat in data:\n	for obs in data[cat]:\n		print obs
+-ffile
+-data
+-data[:]
+-data[:]['title']
+-\nfor obs, cat in data[obs][cat]: print obs, cat
+-data.keys
+-data.keys()
+-for obs in data.keys(): print obs
+-for obs in data: print obs
+-data.keys
+-for obs in data[:][data.keys()]: print obs
+-for obs, key in data[:][data.keys()]: print obs, key
+-for obs, key in data: print obs
+-dir(data)
+-data_dic = data.to_dict()
+-type(data_dic)
+-data_dic
+-os.getcwd()
+-cwd = os.path.abspath(os.path.dirname(sys.argv[0]))\nos.chdir(cwd)
+-os.getcwd()
+-cwd
+-data_dic['rating']
+-size(data_dic)
+-size(data_dic['rating'])
+-shape(data_dic['rating'])
+-shape(data_dic)
+-type(data_dic)
+-data_dic.keys
+-data_dic.keys()
+-size(data_dic['rating'])
+-shape(data_dic['rating'])
+-len(data_dic['rating'])
+-len(data_dic)
+-shape(data_dic)
+-data_arr
+-data_arr = array(data_dic)
+-shape(data_arr)
+-size(data_arr)
+-del data_arr
+-shape(data_dict['title'][:])
+-shape(data_dict['title'])
+-shape(data_dic['title'])
+-shape(data_dic['title'][:])
+-data_dic['title'].keys()
+-data_dic['rating'][arange(10000)]
+-print arange(1000)
+-data_dic['rating'][arange(1000)]
+-dir(data)
+-data_xls = data.to_excel()
+-help(data.to_excel)
+-data_dic
+-type(data_dic)
+-dir(data_dic)
+-data_dic.__sizeof__
+-data_dic.__sizeof__()
+-data_dic.items
+-data_dic.items()
+-dir(data_dir)
+-dir(data_dic)
+-dir(data_dic)
+-help(data_dic.items())
+-help(data_dic.items)
+-dir(data_dic)
+-data_dic.keys()
+-ins(ffile.writelines)
+-ins(ffile.writelines())
+-help(ffile.writelines)
+-data_dic['user_id'][0]
+-data_dic['user_id'][14]
+-data_dic['user_id'][1]
+-data_dic['user_id'][2]
+-data_dic['user_id'][3]
+-data_dic['user_id'][4]
+-data_dic['user_id'][5]
+-data_dic['user_id'].count()
+-data_dic['user_id'].len
+-len(data_dic['user_id'])
+-data_dic['user_id' == 0]
+-data_dic['user_id'=1]
+-dir(data_dic)
+-help(enumerate)
+-data_dic['user_id'][2:55]
+-data_dic['user_id'][4]
+-data_dic['user_id']['title']
+-data_dic['title']['Toy Story']
+-data_dic['title'][0]
+-data_dic['title'][1]
+-dir(data_dic['titiel']])
+-dir(data_dic['title'][:10])
+-data_dic.keys()
+-help(data_dic.iteritems)
+-dir(data_dic)
+-print data_dic.iterkeys
+-print data_dic.iterkeys()
+-for i in data_dic.iterkeys: print i
+-for i in [data_dic.iterkeys]: print i
+-for i in [data_dic.iterkeys]: print 1 +=1
+-for i in [data_dic.iterkeys]: print 1
+-data_dic.keys
+-data_dic.keys()
+-line  = []
+-for keys in data_dic.keys(): line.append(data_dic[keys][0])
+-line
+-str(line)
+-line[0]
+-str(line[0])
+-3 % 2
+-4 % 2
+-ins(pd.read_table)
+-help(pd.read_table)
+-data
+-data.keys()
+-\nfor key in data.keys(): print key
+-\nfor key in data.keys(): print key
+-os.getcwd()
+-'K:\\Sublime Text 2\\Data\\Packages\\User'
+-type(investordata)
+-investordata.keys()
+-indata.keys()
+-invdata.keys()
+-invdata.keys()
+-shape(invdata)
+-shape(investors_by_ticker)
+-investors_by_ticker
+-investors_by_invclass
+-invdata[:10]
+-invdata[:15]
+-tickers_by_date = invdata.groupby('date')
+-shape(tickers_by_date)
+-investors_by_ticker
+-investors_by_ticker.keys()
+-investors_by_ticker['AAA']
+-help(invdata.groupby)
+-size(invdata)
+-shape(invdata)
+-dir(invdata.groupby)
+-dir(invdata.mean)
+-dir(invdata)
+-invdata.ix
+-invdata.ix(0)
+-print invdata.ix
+-print invdata.ix[0]
+-print invdata.ix[1]
+-print invdata.ix[:10]
+-by_ticker
+-==---=-----------------------------
+-==-----------
+---=-=;;[;-;[;];[-;[;];[;[w[;-;[]=;[-_+_{P_:{{:{{:}:{:{:_:_:_:_:_:{_:{_":{:"{:"{:"{:{:"}}}}}}}}}}]]]]]]
+-[]j[[][][]{}{}[]{}[['',['['"['[""[''][""][''][''][['']['['asdflkasdjf['asdfklasjdofj']['lksdlfk']'']['/n']]]]]]
+-/n
+-\\n
+-{}
+-]]
+-a['['['['[j'[;[';;;;;;;+::::;;;::;;:::;:;;:;[:['"['['['[['['[['['['['[['['['[']'[']['[]}]]]]]
+-*"[''['['[]'[']j[']'[j']'[']j[['[''][''][']']['']['asdlfkjaowe"
+-lsit = ======= == ====j=====;``````````~~~~``````;['['][']['[asfielaidjfkdj'['][][][]['][][~~~~~~;['[']'['];=-=====+==+===+==+===+==+==+=+==+==+==+=+=+========+=+=+=+=+=+=+=+=+=+=+====+==++++=+=+==+==_____--_______++++_+{}{}{][]{{}{}{}{][]pj['{'{'{"{"]['\\["][[["'['['['['['['[[['['['[''\\;'\\';\\'j\\][]]'['][0()0'['[']'[-'='-'[-[----------2j9090977800989989867567676767676767676767676767676776767676767676767676f7788878786868688686998989889898989887878878889j9l8l9l8k8l9l8k9l8k900990900099090009000998780998j709j98078j8k"]
+-lk;alsdjf;laksdj;lfkaj;;;']
+-by_ticker_date
+-dir(by_ticker_date)
+-by_ticker_date.level()
+-by_ticker_date.level
+-print by_ticker_date
+-by_ticker_date[:20]
+-by_ticker_date['ticker']
+-invdata[:10]
+-by_ticker_date.mean()
+-shape(by_ticker_date)
+-by_ticker_date['ticker']
+-by_ticker_date['number']
+-by_ticker_date['number'].mean()
+-by_ticker_date.ix[0]
+-invdata.ix[0]
+-by_ticker_date.pivot_table('number', rows='ticker')
+-help(print)
+-help(print())
+-help(print(';'))
+-inspect(print)
+-inspect(print())
+-os.path.abspath(os.path.dirname(sys.argv[0]))2
+-+32
+-';l'
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-os.getcwd()
+-size(invdata)
+-shape(invdata)
+-invdata.keys()
+-type(invdata)
+-type(by_ticker_date)
+-shape(by_ticker_date)
+-os.subprocess
+-import os
+-os.subprocess
+-import subprocess
+-help(subprocess)
+-__file__
+-print __file__
+-normpath
+-normpath()
+-os.path.abspath
+-import os
+-os.path.abspath()
+-os.path.dirname(sys.argv[0])
+-import sys
+-os.path.dirname(sys.argv[0])
+-os.path.abspath(os.path.dirname(sys.argv[0]))2
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-os.listdir()
+-cwd = os.path.abspath(os.path.dirname(sys.argv[0]))
+-os.listdir(cwd)
+-print __name__
+-help(__name__)
+-Scriptname
+-os.path.basename(__file__)
+-sys.argv[0]
+-print sys.argv[0]
+-import shell_turtlestein
+-import __main__ as main
+-print(main.__file__)
+-dir(main)
+-print main.__name__
+-cwd
+-dir(time)
+-fir(os.path)
+-dir(os.path)
+-print by_ticer_date.ix[0]
+-print by_ticker_date.ix[0]
+-mean_ratings
+-print mean_ratings
+-data.ix[0]
+-data.ix[0].__doc__
+-mean_ratings[:10]
+-print type(invdata)
+-shape(invdata)
+-import sys
+-from pprint import pprint as pp
+-pp(sys.path)
+-pp(dir(invdataA))
+-import spyderlib
+-dir(spyderlib)
+-spyderlib.LOCALEPATH
+-np.linalg.cholesky
+-invdataA[:10]
+-invdataA[0]
+-invdataA.keys*()
+-invdataA.keys
+-invdataA.keys()
+-type(invdataA)
+-invdataA.groupby('ticker').size()
+-invdataA[:10]
+-help(pd.read_table)
+-invdataA[:10]
+-invdataA.groupby('ticker')
+-by_tickerA = invdataA.groupby('ticker')
+-dir(by_tickerA)
+-import pprint as pp
+-pp dir(by_tickerA)
+-print dir(by_tickerA)
+-y = dir(by_tickerA)
+-pp y
+-pp 'asdf'
+-dir(pprint)
+-import pprint as pprint
+-ppring dir(by_tickerA)
+-invdataA[:-10]
+-invdataA[-10:]
+-invdataA.keys()
+-invdataA['ticker'].keys()
+-obs_num = invdata.groupby('ticker').size()
+-obs_num = invdataA.groupby('ticker').size()
+-obs_num
+-from select import select
+-help(select)
+-import time
+-dir(time)
+-dir(time.time)
+-help(time)
+-import timer
+-dir(timer)
+-help(timer)
+-set_timer(5)
+-dir(timer)
+-timer.set_timer(5)
+-timer.set_timer(5, print('asdfasdf'))
+-dir(time)
+-import os
+-os.getcwd()\\
+-dir(urllib2.urlopen)
+-import urllib2
+-dir(urllib2.urlopen)
+-urllib2.urlopen.__doc__)
+-urllib2.urlopen.__doc__
+-urllib2.__doc__
+-print urllib2.__doc__
+-import inspect.argspec as ins
+-import inspect
+-inspect.argspec
+-dir(inspect)
+-import inspect.getargspec as getargspec
+-from inspect import getargspec
+-from inspect import getargspec as getas
+-getas(urllib2.urlopen)
+-inspect(urllib2.urlopen)
+-getas(urllib2.urlopen)
+-curlfile('www.google.com')
+-curlfile(www.google.com)
+-url = 'www.google.com'
+-curlfile(url)
+-gas(urllib2.urlopen)
+-from zipfile import ZipFile as zp
+-gas(zp)
+-from inspect import getargspec as gas
+-gas(zp())
+-gas(zp)
+-help(zp)
+-globals()
+-zp.__doc))
+-zp.__doc__
+-dir(zp)
+-dir(zp.extractall)
+-help(zp.extractall)
+-os.mkdir('names')
+-import os
+-os.mkdir('names')
+-cwd
+-import sys
+-os.path.abspath(os.path.dirname(sys.argv[0]))
+-cwd = os.path.abspath(os.path.dirname(sys.argv[0]))
+-cwd
+-os.listdir(cwd)
+-os.chdir(names)
+-os.chdir("names")
+-os.listdir
+-os.listdir()
+-os.listdir(cwd)
+-cwd = cwd + '/names'
+-cwd
+-os.listdir(cwd)
+-cwd = cwd.replace('/names', '\\\\names')
+-cwd
+-os.pathexists(cwd)
+-dir(os)
+-dir(os.path)
+-os.path.exists(cwd)
+-os.listdir(cwd)
+-cwd
+-import subprocess
+-help(subprocess.Popen)
+-import urllib2
+-help(urllib2.urlopen)
+-help(urllib2.urlopen())
+-help(urllib2.urlopen(
+-help(urllib2.urlopen)
+-help(urllib2.urlopen))
+-help(urllib2.urlopen)
+-help(open())
+-help(open)
+-open.__doc__
+-in3 (6,2)
+-import Numeric.LinearAlgebra
+-mem1
+-freeTree
+-freeTree
+-freeTree
+-freeTrees
+-freeTreet
+-Data.Map.lookup "to" (Data.Map.fromList [zip (words "to be or not") [2,2,1,1]])
+-[zip (words "to be or not") [2,2,1,1]])
+-[zip (words "to be or not") [2,2,1,1]]
+-zip (words "to be or not") [2,2,1,1]
+-Data.Map.lookup "to" (Data.Map.fromList zip (words "to be or not") [2,2,1,1])
+-Data.Map.lookup "to" (Data.Map.fromList $ zip (words "to be or not") [2,2,1,1])
+-Data.Map.lookup "wrong" (Data.Map.fromList $ zip (words "to be or not") [2,2,1,1])
+-Data.Map.toList (Data.Map.fromList $ zip (words "to be or not") [2,2,1,1])
+-:t Data.Map.toList (Data.Map.fromList $ zip (words "to be or not") [2,2,1,1])
+-:t (Data.Map.fromList $ zip (words "to be or not") [2,2,1,1])
+-foldl countElem Data.Map.empty $ words "to be or not to be"
+-skipBigrams exampleWords
+-correct
+-qwer
+-import ColourGHCI
+-''
+-import ColourGHCI
+-qwer
+-:hoog ok
+-:hoog fmap
+-:hoogle fmap
+-pprint $ "ok"
+-(use 'cloj.core :reload-all)
+-1+1
+-{:user {:plugins [[lein-localrepo "0.5.0"]]}}

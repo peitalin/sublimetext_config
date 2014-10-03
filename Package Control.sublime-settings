@@ -1,0 +1,18 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"Alignment",
+		"BracketHighlighter",
+		"Jedi - Python autocompletion",
+		"JSONLint",
+		"LaTeXTools",
+		"Package Control",
+		"Pretty JSON",
+		"Shell Turtlestein",
+		"Theme - Nil",
+		"Theme - Soda",
+		"Theme - Spacegray",
+		"Vintageous"
+	]
+}

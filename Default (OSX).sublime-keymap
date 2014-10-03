@@ -1,0 +1,159 @@
+[
+{"keys": ["super+}"], "command": "next_view_in_stack" },
+{"keys": ["super+]"], "command": "prev_view_in_stack" },
+{"keys": ["f4"], "command": "prompt_add_folder" },
+{"keys": ["shift+f4"], "command": "close_folder_list" },
+{"keys": ["f10"], "command": "toggle_side_bar" },
+{"keys": ["f12"], "command": "toggle_minimap"},
+{"keys": ["shift+f10"], "command": "toggle_status_bar"},
+{"keys": ["f11"], "command": "toggle_distraction_free"},
+{"keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+{"keys": ["alt+`"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+{"keys": ["super+1"], "command": "focus_group", "args": { "group": 0 } },
+{"keys": ["super+2"], "command": "focus_group", "args": { "group": 1 } },
+
+{"keys": ["super+option+2"], "command": "run_multiple_commands", "args":
+                    {"commands": [
+                        {"command": "set_layout", "args": {"cells": [[0, 0, 1, 1], [0, 1, 1, 2]], "cols": [0.0, 1.0], "rows": [0.0, 0.5, 1.0]}, "context":"window"},
+                        {"command": "move_to_group", "args":{ "group" : 1 }, "context":"window" }]
+}},
+
+{ "keys": ["ctrl+1"], "command": "toggle_comment",
+"args": { "block": false } },
+{ "keys": ["ctrl+1"], "command": "toggle_comment",
+"args": { "block": true } },
+
+
+{"keys": ["k","j"], "command": "press_key",            "args": {"key": "<esc>"},           "context": [{"key": "vi_command_mode_aware"}]},
+{"keys": ["k", "j"], "command": "_enter_normal_mode",   "args": {"mode": "mode_insert"},    "context": [{"key": "vi_insert_mode_aware"}]},
+
+
+
+// SHELL TURTLE
+// PYTHON
+    {"keys": ["f5"], "command": "subprocess_in_cwd", "args": {
+        // This AppleScript requires the access for assistive
+        // devices to be turned on in the Universal Access system
+        // preferences. Using Cmd-T keystroke instead (which
+        // doesn't require the above setting) does not work if keys
+        // are still held down from the Sublime Text keybinding.
+        "cmd": "osascript -e 'tell application \"Terminal\"' -e 'activate' -e 'tell application \"System Events\" to click menu item \"Basic\" of ((process \"Terminal\")'\\''s (menu bar 1)'\\''s (menu bar item \"Shell\")'\\''s (menu \"Shell\")'\\''s (menu item \"New Tab\")'\\''s (menu \"New Tab\"))' -e \"do script with command \\\"cd '$PWD' && ipy -i $file \\\" in window 1\" -e 'end tell'",
+        // Wait for AppleScript to return a successful exit code.  This allows
+        // for showing any error message the script may cause.  For instance, if
+        // the user doesn't have their "Access for assistive devices" setting
+        // enabled.
+        "wait": true}
+    },
+
+    {"keys": ["shift+f5"], "command": "subprocess_in_cwd", "args": {
+        // This AppleScript requires the access for assistive
+        // devices to be turned on in the Universal Access system
+        // preferences. Using Cmd-T keystroke instead (which
+        // doesn't require the above setting) does not work if keys
+        // are still held down from the Sublime Text keybinding.
+        "cmd": "osascript -e 'tell application \"Terminal\"' -e 'activate' -e 'tell application \"System Events\" to click menu item \"Basic\" of ((process \"Terminal\")'\\''s (menu bar 1)'\\''s (menu bar item \"Shell\")'\\''s (menu \"Shell\")'\\''s (menu item \"New Tab\")'\\''s (menu \"New Tab\"))' -e \"do script with command \\\"cd '$PWD' && python3 $file \\\" in window 1\" -e 'end tell'",
+
+        // Wait for AppleScript to return a successful exit code.  This allows
+        // for showing any error message the script may cause.  For instance, if
+        // the user doesn't have their "Access for assistive devices" setting
+        // enabled.
+        "wait": true}
+    },
+
+    {"keys": ["f6"], "command": "subprocess_in_cwd", "args": {
+        // This AppleScript requires the access for assistive
+        // devices to be turned on in the Universal Access system
+        // preferences. Using Cmd-T keystroke instead (which
+        // are still held down from the Sublime Text keybinding.
+        "cmd": "osascript -e 'tell application \"Terminal\"' -e 'activate' -e 'tell application \"System Events\" to click menu item \"Basic\" of ((process \"Terminal\")'\\''s (menu bar 1)'\\''s (menu bar item \"Shell\")'\\''s (menu \"Shell\")'\\''s (menu item \"New Tab\")'\\''s (menu \"New Tab\"))' -e \"do script with command \\\"cd '$PWD' \\\" in window 1\" -e 'end tell'",
+        // Wait for AppleScript to return a successful exit code.  This allows
+        // for showing any error message the script may cause.  For instance, if
+        // the user doesn't have their "Access for assistive devices" setting
+        // enabled.
+        "wait": true}
+    },
+
+
+    {"keys": ["shift+f6"], "command": "subprocess_in_cwd", "args": {
+        // This AppleScript requires the access for assistive
+        // devices to be turned on in the Universal Access system
+        // preferences. Using Cmd-T keystroke instead (which
+        // are still held down from the Sublime Text keybinding.
+        "cmd": "osascript -e 'tell application \"Terminal\"' -e 'activate' -e 'tell application \"System Events\" to click menu item \"Basic\" of ((process \"Terminal\")'\\''s (menu bar 1)'\\''s (menu bar item \"Shell\")'\\''s (menu \"Shell\")'\\''s (menu item \"New Tab\")'\\''s (menu \"New Tab\"))' -e \"do script with command \\\"cd '$PWD' && julia -L $file \\\" in window 1\" -e 'end tell'",
+        // Wait for AppleScript to return a successful exit code.  This allows
+        // for showing any error message the script may cause.  For instance, if
+        // the user doesn't have their "Access for assistive devices" setting
+        // enabled.
+        "wait": true}
+    },
+
+
+
+// HASKELL
+    {"keys": ["f7"], "command": "subprocess_in_cwd", "args": {
+        // This AppleScript requires the access for assistive
+        // devices to be turned on in the Universal Access system
+        // preferences. Using Cmd-T keystroke instead (which
+        // are still held down from the Sublime Text keybinding.
+        "cmd": "osascript -e 'tell application \"Terminal\"' -e 'activate' -e 'tell application \"System Events\" to click menu item \"Basic\" of ((process \"Terminal\")'\\''s (menu bar 1)'\\''s (menu bar item \"Shell\")'\\''s (menu \"Shell\")'\\''s (menu item \"New Tab\")'\\''s (menu \"New Tab\"))' -e \"do script with command \\\"cd '$PWD' && ghci $file \\\" in window 1\" -e 'end tell'",
+        // Wait for AppleScript to return a successful exit code.  This allows
+        // for showing any error message the script may cause.  For instance, if
+        // the user doesn't have their "Access for assistive devices" setting
+        // enabled.
+        "wait": true}
+    },
+
+
+// CLOJURE
+    {"keys": ["f8"], "command": "subprocess_in_cwd", "args": {
+        // This AppleScript requires the access for assistive
+        // devices to be turned on in the Universal Access system
+        // preferences. Using Cmd-T keystroke instead (which
+        // are still held down from the Sublime Text keybinding.
+        "cmd": "osascript -e 'tell application \"Terminal\"' -e 'activate' -e 'tell application \"System Events\" to click menu item \"Basic\" of ((process \"Terminal\")'\\''s (menu bar 1)'\\''s (menu bar item \"Shell\")'\\''s (menu \"Shell\")'\\''s (menu item \"New Tab\")'\\''s (menu \"New Tab\"))' -e \"do script with command \\\"cd $PWD && R --quiet --no-save --file=$file\\\" in window 1\" -e 'end tell'",
+        // Wait for AppleScript to return a successful exit code.  This allows
+        // for showing any error message the script may cause.  For instance, if
+        // the user doesn't have their "Access for assistive devices" setting
+        // enabled.
+        "wait": true}
+    },
+
+    {"keys": ["f9"], "command": "subprocess_in_cwd", "args": {
+        // This AppleScript requires the access for assistive
+        // devices to be turned on in the Universal Access system
+        // preferences. Using Cmd-T keystroke instead (which
+        // are still held down from the Sublime Text keybinding.
+        "cmd": "osascript -e 'tell application \"Terminal\"' -e 'activate' -e 'tell application \"System Events\" to click menu item \"Basic\" of ((process \"Terminal\")'\\''s (menu bar 1)'\\''s (menu bar item \"Shell\")'\\''s (menu \"Shell\")'\\''s (menu item \"New Tab\")'\\''s (menu \"New Tab\"))' -e \"do script with command \\\"cd $PWD && ls \\\" in window 1\" -e 'end tell'",
+        // Wait for AppleScript to return a successful exit code.  This allows
+        // for showing any error message the script may cause.  For instance, if
+        // the user doesn't have their "Access for assistive devices" setting
+        // enabled.
+        "wait": true}
+    },
+
+
+
+// R
+
+{
+"keys": ["shift+f8"], "command": "run_multiple_commands",
+                "args":
+                    {"commands": [
+    {"command": "set_layout", "args": {"cells": [[0, 0, 1, 1], [0, 1, 1, 2]], "cols": [0.0, 1.0], "rows": [0.0, 0.99, 1.0]}, "context":"window"},
+    {"command": "repl_open", "args": {"additional_scopes": ["tex.latex.knitr"], "cmd": {"linux": ["R", "--interactive", "--no-readline"], "osx": ["R", "--interactive", "--no-readline"], "windows": ["Rterm.exe", "--ess", "--encoding=$win_cmd_encoding"]}, "cmd_postfix": "\n", "cwd": "$file_path", "encoding": {"linux": "utf8", "osx": "utf8", "windows": "$win_cmd_encoding"}, "extend_env": {"linux": {"PATH": "{PATH}:/usr/local/bin"}, "osx": {"PATH": "{PATH}:/usr/local/bin"}, "windows": {}}, "external_id": "r", "soft_quit": "\nquit(save=\"no\")\n", "suppress_echo": {"linux": true, "osx": true, "windows": false}, "syntax": "Packages/R/R Console.tmLanguage", "type": "subprocess"}, "context":"window"},
+        {"command": "move_to_group", "args":{ "group" : 1 }, "context":"window" }
+    ]}
+}
+
+/*{
+"keys": ["shift+f8"], "command": "run_multiple_commands",
+                "args":
+                    {"commands": [
+        {"command": "repl_transfer_current", "args": {"action": "view_write", "scope": "file"}, "context":"window"},
+        {"command": "focus_group", "args": {"group": 1}, "context": "window" },
+        {"command": "repl_enter", "args": {}, "context": "window"}
+    ]}
+}*/
+
+
+]

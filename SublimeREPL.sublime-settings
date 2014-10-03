@@ -1,0 +1,4 @@
+{
+	"auto_complete_triggers": [ {"selector": "source.python - string - comment - constant.numeroc", "characters": "."} ],
+	"rope_autoimport_modules": ["numpy.linalg.*", "os.*", "sys.*", "numpy.*", "matplotlib.*", "scipy.stats.*", "pandas.*", "urllib2.*"]
+}
