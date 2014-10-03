@@ -4,6 +4,6 @@
 
 ## Theme: Neon Neue
 
-![alt tag](https://raw.githubusercontent.com/peitalin/sublimetext_config/master/neon-neue.png
+![alt tag](https://raw.githubusercontent.com/peitalin/sublimetext_config/master/neon-neue.png)
 
 
